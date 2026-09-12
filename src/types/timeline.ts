@@ -92,3 +92,4 @@ export interface UserWatchProgress {
   watchedNodes: Record<string, boolean>;
   favoriteNodes?: string[];
 }
+
