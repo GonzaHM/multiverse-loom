@@ -1,0 +1,365 @@
+{
+  "schemaVersion": "1.0.0",
+  "lastUpdated": "2026-09-12",
+  "universes": [
+    {
+      "id": "earth-616",
+      "name": "Earth-616 (神聖時間軸)",
+      "designation": "Earth-616",
+      "color": "#E23636",
+      "secondaryColor": "#7F1D1D",
+      "franchise": "marvel",
+      "description": "マーベル・シネマティック・ユニバース（MCU）の中心となる主時間軸。かつてTVAによって『神聖時間軸』として徹底管理されていた。"
+    },
+    {
+      "id": "tva-outside-time",
+      "name": "TVA / 時間の外側",
+      "designation": "Null-Time Zone",
+      "color": "#F59E0B",
+      "secondaryColor": "#78350F",
+      "franchise": "marvel",
+      "description": "通常時間の流れの外側に位置する時間変異取締局（TVA）および時の終わりの城。マルチバースの分岐と剪定を司る。"
+    },
+    {
+      "id": "earth-96283",
+      "name": "Earth-96283 (ライミ・バース)",
+      "designation": "Earth-96283",
+      "color": "#DC2626",
+      "secondaryColor": "#991B1B",
+      "franchise": "marvel",
+      "description": "サム・ライミ監督、トビー・マグワイア主演『スパイダーマン』三部作の世界。"
+    },
+    {
+      "id": "earth-120703",
+      "name": "Earth-120703 (ウェブ・バース)",
+      "designation": "Earth-120703",
+      "color": "#2563EB",
+      "secondaryColor": "#1E3A8A",
+      "franchise": "marvel",
+      "description": "マーク・ウェブ監督、アンドリュー・ガーフィールド主演『アメイジング・スパイダーマン』の世界。"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "captain-america-the-first-avenger-2011",
+      "title": {
+        "ja": "キャプテン・アメリカ/ザ・ファースト・アベンジャー",
+        "en": "Captain America: The First Avenger"
+      },
+      "releaseYear": 2011,
+      "releaseDate": "2011-07-22",
+      "type": "movie",
+      "phase": 1,
+      "chronologicalOrder": 1,
+      "inUniverseTimeLabel": "1942–1945",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/vSNxAJTlD0r02V9sPYFSpLvgVGG.jpg",
+      "summary": "第二次大戦中、極秘実験で超人兵士となったスティーブ・ロジャースが、四次元キューブを狙うヒドラのレッドスカルに立ち向かうMCU史の原点。",
+      "watchStatus": false,
+      "characters": ["Steve Rogers", "Peggy Carter", "Bucky Barnes", "Red Skull"],
+      "tags": ["Infinity Saga", "Phase 1", "Super Soldier", "Tesseract"]
+    },
+    {
+      "id": "iron-man-2008",
+      "title": {
+        "ja": "アイアンマン",
+        "en": "Iron Man"
+      },
+      "releaseYear": 2008,
+      "releaseDate": "2008-05-02",
+      "type": "movie",
+      "phase": 1,
+      "chronologicalOrder": 3,
+      "inUniverseTimeLabel": "2010",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/78lPtwv72eTNqFW9COBYI0dWDJa.jpg",
+      "summary": "天才兵器開発者トニー・スタークが拉致事件を契機にパワードスーツを開発。「アベンジャーズ計画」へと繋がる記念すべきMCU第1作。",
+      "watchStatus": false,
+      "characters": ["Tony Stark", "Pepper Potts", "James Rhodes", "Nick Fury"],
+      "tags": ["Infinity Saga", "Phase 1", "Avenger Initiative"]
+    },
+    {
+      "id": "the-avengers-2012",
+      "title": {
+        "ja": "アベンジャーズ",
+        "en": "The Avengers"
+      },
+      "releaseYear": 2012,
+      "releaseDate": "2012-05-04",
+      "type": "movie",
+      "phase": 1,
+      "chronologicalOrder": 7,
+      "inUniverseTimeLabel": "2012",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
+      "summary": "ロキ率いる異星人軍団によるNY侵略を阻止するため、最強ヒーローたちがアベンジャーズとして初集結。後のタイムトラベル作戦の重要拠点。",
+      "watchStatus": false,
+      "characters": ["Tony Stark", "Steve Rogers", "Thor", "Bruce Banner", "Natasha Romanoff", "Clint Barton", "Loki"],
+      "tags": ["Infinity Saga", "Phase 1", "Battle of NY"]
+    },
+    {
+      "id": "spider-man-2002",
+      "title": {
+        "ja": "スパイダーマン",
+        "en": "Spider-Man"
+      },
+      "releaseYear": 2002,
+      "releaseDate": "2002-05-03",
+      "type": "movie",
+      "phase": "Legacy",
+      "chronologicalOrder": 101,
+      "inUniverseTimeLabel": "2002 (Earth-96283)",
+      "universeId": "earth-96283",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/gh4c2bhLYQEZApEiYMsmFg2llDR.jpg",
+      "summary": "特殊なクモに噛まれたピーター・パーカーが『大いなる力には大いなる責任が伴う』を胸に悪と戦う、サム・ライミ版伝説の幕開け。",
+      "watchStatus": false,
+      "characters": ["Peter Parker (Earth-96283)", "Norman Osborn", "Mary Jane Watson"],
+      "tags": ["Raimi-verse", "Legacy Spider-Man"]
+    },
+    {
+      "id": "the-amazing-spider-man-2012",
+      "title": {
+        "ja": "アメイジング・スパイダーマン",
+        "en": "The Amazing Spider-Man"
+      },
+      "releaseYear": 2012,
+      "releaseDate": "2012-07-03",
+      "type": "movie",
+      "phase": "Legacy",
+      "chronologicalOrder": 201,
+      "inUniverseTimeLabel": "2012 (Earth-120703)",
+      "universeId": "earth-120703",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/fSbkkpzgJqO11V9d5Psmg5eRfvL.jpg",
+      "summary": "両親失踪の真相を追うピーター・パーカーが新たな能力に目覚め、オズコープ社のコナーズ博士（リザード）に立ち向かうリブート第1作。",
+      "watchStatus": false,
+      "characters": ["Peter Parker (Earth-120703)", "Gwen Stacy", "Curt Connors"],
+      "tags": ["Webb-verse", "Legacy Spider-Man"]
+    },
+    {
+      "id": "avengers-endgame-2019",
+      "title": {
+        "ja": "アベンジャーズ/エンドゲーム",
+        "en": "Avengers: Endgame"
+      },
+      "releaseYear": 2019,
+      "releaseDate": "2019-04-26",
+      "type": "movie",
+      "phase": 3,
+      "chronologicalOrder": 23,
+      "inUniverseTimeLabel": "2023 (Time Heist to 2012/1970)",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
+      "summary": "サノスにより全宇宙の生命の半分が消し去られて5年後、ヒーローたちは量子世界を経由したタイム泥棒作戦でインフィニティ・ストーン奪還に挑む。",
+      "watchStatus": false,
+      "characters": ["Tony Stark", "Steve Rogers", "Thor", "Bruce Banner", "Natasha Romanoff", "Clint Barton", "Thanos"],
+      "tags": ["Infinity Saga Climax", "Phase 3", "Time Travel"]
+    },
+    {
+      "id": "loki-season-1-2021",
+      "title": {
+        "ja": "ロキ シーズン1",
+        "en": "Loki Season 1"
+      },
+      "releaseYear": 2021,
+      "releaseDate": "2021-06-09",
+      "type": "series",
+      "phase": 4,
+      "chronologicalOrder": 24,
+      "inUniverseTimeLabel": "時間の外側 (2012年NYから分岐)",
+      "universeId": "tva-outside-time",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/voHUmlvjys5gYe37DYLmEvZaWzK.jpg",
+      "summary": "エンドゲームのNY作戦中に四次元キューブを奪って逃亡したロキがTVAに拘束され、神聖時間軸の真実と多元宇宙解放の引き金を引く。",
+      "watchStatus": false,
+      "characters": ["Loki (Variant L1130)", "Mobius M. Mobius", "Sylvie", "He Who Remains"],
+      "tags": ["Multiverse Saga", "Phase 4", "TVA", "Sacred Timeline Fracture"]
+    },
+    {
+      "id": "spider-man-no-way-home-2021",
+      "title": {
+        "ja": "スパイダーマン: ノー・ウェイ・ホーム",
+        "en": "Spider-Man: No Way Home"
+      },
+      "releaseYear": 2021,
+      "releaseDate": "2021-12-17",
+      "type": "movie",
+      "phase": 4,
+      "chronologicalOrder": 27,
+      "inUniverseTimeLabel": "2024年 秋",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
+      "summary": "正体が露見したピーターの願いでストレンジが唱えた忘却魔術が暴走。歴代ライミ版・ウェブ版のヴィランとスパイダーマンたちが次元を超えて集結する。",
+      "watchStatus": false,
+      "characters": [
+        "Peter Parker (Earth-616)",
+        "Peter Parker (Earth-96283)",
+        "Peter Parker (Earth-120703)",
+        "Doctor Strange",
+        "Green Goblin",
+        "Doctor Octopus",
+        "Electro"
+      ],
+      "tags": ["Multiverse Saga", "Phase 4", "Spider-Verse Collision"]
+    },
+    {
+      "id": "doctor-strange-in-the-multiverse-of-madness-2022",
+      "title": {
+        "ja": "ドクター・ストレンジ/マルチバース・オブ・マッドネス",
+        "en": "Doctor Strange in the Multiverse of Madness"
+      },
+      "releaseYear": 2022,
+      "releaseDate": "2022-05-06",
+      "type": "movie",
+      "phase": 4,
+      "chronologicalOrder": 28,
+      "inUniverseTimeLabel": "2024年 冬–2025年",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg",
+      "summary": "多元宇宙を行き来する少女アメリカ・チャベスを守るため、ストレンジは禁断の書ダークホールドに呑まれたワンダと狂乱のマルチバースを駆け巡る。",
+      "watchStatus": false,
+      "characters": ["Stephen Strange", "Wanda Maximoff", "America Chavez", "Wong"],
+      "tags": ["Multiverse Saga", "Phase 4", "Incursion", "Earth-838"]
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-cap1-avengers",
+      "source": "captain-america-the-first-avenger-2011",
+      "target": "the-avengers-2012",
+      "relationType": "direct_sequel",
+      "label": "アベンジャーズ招集",
+      "description": "70年の眠りから目覚めたキャプテン・アメリカがアベンジャーズへ合流。",
+      "style": {
+        "lineStyle": "solid",
+        "color": "#E23636",
+        "animated": false,
+        "width": 2
+      }
+    },
+    {
+      "id": "edge-ironman-avengers",
+      "source": "iron-man-2008",
+      "target": "the-avengers-2012",
+      "relationType": "direct_sequel",
+      "label": "アベンジャーズ結成",
+      "description": "トニー・スタークがNY決戦へ主力として参戦。",
+      "style": {
+        "lineStyle": "solid",
+        "color": "#E23636",
+        "animated": false,
+        "width": 2
+      }
+    },
+    {
+      "id": "edge-avengers-endgame",
+      "source": "the-avengers-2012",
+      "target": "avengers-endgame-2019",
+      "relationType": "direct_sequel",
+      "label": "サノス最終決戦 & 2012年NYへの時間潜入",
+      "description": "インフィニティ・サーガの集大成。四次元キューブ回収のため時間を遡る。",
+      "style": {
+        "lineStyle": "solid",
+        "color": "#E23636",
+        "animated": false,
+        "width": 3
+      }
+    },
+    {
+      "id": "edge-endgame-loki",
+      "source": "avengers-endgame-2019",
+      "target": "loki-season-1-2021",
+      "relationType": "multiverse_branch",
+      "label": "時間軸分岐: ロキ逃亡",
+      "description": "2012年のロキがキューブを持ち逃げし、神聖時間軸から分岐してTVAへ連行。",
+      "style": {
+        "lineStyle": "dashed",
+        "color": "#F59E0B",
+        "animated": true,
+        "width": 2.5
+      }
+    },
+    {
+      "id": "edge-loki-nwh",
+      "source": "loki-season-1-2021",
+      "target": "spider-man-no-way-home-2021",
+      "relationType": "multiverse_branch",
+      "label": "剪定停止によるマルチバース境界脆弱化",
+      "description": "TVAの剪定停止により、異次元の存在が引き寄せられやすくなる土壌が完成。",
+      "style": {
+        "lineStyle": "dashed",
+        "color": "#F59E0B",
+        "animated": true,
+        "width": 2
+      }
+    },
+    {
+      "id": "edge-endgame-nwh",
+      "source": "avengers-endgame-2019",
+      "target": "spider-man-no-way-home-2021",
+      "relationType": "direct_sequel",
+      "label": "トニー・スタークの遺産",
+      "description": "エンドゲーム後の世界でのピーターの葛藤。",
+      "style": {
+        "lineStyle": "solid",
+        "color": "#E23636",
+        "animated": false,
+        "width": 2
+      }
+    },
+    {
+      "id": "edge-raimi-nwh",
+      "source": "spider-man-2002",
+      "target": "spider-man-no-way-home-2021",
+      "relationType": "crossover",
+      "label": "次元交差: ライミ版合流",
+      "description": "魔術暴走によりEarth-96283から歴代ヴィランおよびピーター2が招喚。",
+      "style": {
+        "lineStyle": "dashed",
+        "color": "#DC2626",
+        "animated": true,
+        "width": 2.5
+      }
+    },
+    {
+      "id": "edge-webb-nwh",
+      "source": "the-amazing-spider-man-2012",
+      "target": "spider-man-no-way-home-2021",
+      "relationType": "crossover",
+      "label": "次元交差: ウェブ版合流",
+      "description": "魔術暴走によりEarth-120703からリザード、エレクトロ、ピーター3が招喚。",
+      "style": {
+        "lineStyle": "dashed",
+        "color": "#2563EB",
+        "animated": true,
+        "width": 2.5
+      }
+    },
+    {
+      "id": "edge-nwh-mom",
+      "source": "spider-man-no-way-home-2021",
+      "target": "doctor-strange-in-the-multiverse-of-madness-2022",
+      "relationType": "direct_sequel",
+      "label": "マルチバース魔術の余波",
+      "description": "NWHを経て、本格的なマルチバース崩壊（インカージョン）の脅威に対峙。",
+      "style": {
+        "lineStyle": "solid",
+        "color": "#E23636",
+        "animated": false,
+        "width": 2
+      }
+    },
+    {
+      "id": "edge-loki-mom",
+      "source": "loki-season-1-2021",
+      "target": "doctor-strange-in-the-multiverse-of-madness-2022",
+      "relationType": "prerequisite",
+      "label": "推奨視聴: 多元宇宙とインカージョンの前提",
+      "description": "時間軸分岐や変異体の概念など、世界観理解のための重要リンク。",
+      "style": {
+        "lineStyle": "dotted",
+        "color": "#8B5CF6",
+        "animated": false,
+        "width": 1.5
+      }
+    }
+  ]
+}
