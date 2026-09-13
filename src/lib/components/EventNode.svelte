@@ -48,7 +48,8 @@
 <Handle
   type="target"
   position={Position.Left}
-  class="!w-3 !h-3 !bg-cyan-400 !border-2 !border-slate-900 !rounded-full transition-transform hover:scale-150 cursor-crosshair"
+  isConnectable={false}
+  class="!w-3 !h-3 !bg-cyan-400 !border-2 !border-slate-900 !rounded-full transition-transform pointer-events-none"
 />
 
 <!-- 出来事カード本体（映画タイトルは隠し、出来事と年代を全面に押し出す） -->
@@ -114,6 +115,7 @@
 <Handle
   type="source"
   position={Position.Right}
-  class="!w-3 !h-3 !bg-cyan-400 !border-2 !border-slate-900 !rounded-full transition-transform hover:scale-150 cursor-crosshair"
+  isConnectable={false}
+  class="!w-3 !h-3 !bg-cyan-400 !border-2 !border-slate-900 !rounded-full transition-transform pointer-events-none"
 />
 

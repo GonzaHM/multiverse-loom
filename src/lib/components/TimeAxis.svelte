@@ -51,16 +51,20 @@
     { year: 2024, label: '2024 (三世代集結)' }
   ];
 
-  const minX = $derived(getYearX(startYear, startYear, yearScale, endYear) - 250);
-  const maxX = $derived(nullTimeX + 450);
+  const minX = $derived(getYearX(startYear, startYear, yearScale, endYear) - 300);
+  const maxX = $derived(nullTimeX + 500);
   const totalWidth = $derived(maxX - minX);
 </script>
 
 <!-- Svelte Flow ビューポート内（ワールド座標系）に展開される水平時間軸 -->
-<div class="pointer-events-none select-none absolute inset-0 overflow-visible z-0">
+<div
+  class="pointer-events-none select-none z-0"
+  style="position: absolute; left: 0; top: 0; width: 0; height: 0; overflow: visible;"
+>
   <svg
-    class="overflow-visible"
-    style="position: absolute; left: 0; top: 0; width: 1px; height: 1px;"
+    class="overflow-visible pointer-events-none"
+    style="position: absolute; left: {minX}px; top: -500px; width: {totalWidth}px; height: 1000px; overflow: visible;"
+    viewBox="{minX} -500 {totalWidth} 1000"
   >
     <defs>
       <!-- 水平ラインのネオングローフィルター -->
@@ -78,7 +82,7 @@
       <!-- タイムライン水平ビームのグラデーション -->
       <linearGradient id="timeline-beam" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.1" />
-        <stop offset="10%" stop-color="#06b6d4" stop-opacity="0.8" />
+        <stop offset="5%" stop-color="#06b6d4" stop-opacity="0.8" />
         <stop offset="85%" stop-color="#06b6d4" stop-opacity="0.9" />
         <stop offset="95%" stop-color="#f59e0b" stop-opacity="0.9" />
         <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.2" />
@@ -104,9 +108,9 @@
       {@const x = getYearX(year, startYear, yearScale, endYear)}
       <line
         x1={x}
-        y1="-420"
+        y1="-440"
         x2={x}
-        y2="420"
+        y2="440"
         stroke="#334155"
         stroke-width="1"
         stroke-dasharray="4,6"
@@ -119,9 +123,9 @@
       {@const x = getYearX(year, startYear, yearScale, endYear)}
       <line
         x1={x}
-        y1="-300"
+        y1="-320"
         x2={x}
-        y2="300"
+        y2="320"
         stroke="#1e293b"
         stroke-width="1"
         stroke-dasharray="2,6"
@@ -150,6 +154,43 @@
       stroke="url(#timeline-beam)"
       stroke-width="2.5"
     />
+
+    <!-- キャンバス内の中央時間軸バッジ（画面と一緒に完全に動く！） -->
+    <g transform="translate({getYearX(1985, startYear, yearScale, endYear)}, 0)">
+      <rect
+        x="-145"
+        y="-14"
+        width="290"
+        height="28"
+        rx="14"
+        fill="#020617"
+        fill-opacity="0.92"
+        stroke="#06b6d4"
+        stroke-width="1.5"
+        filter="url(#axis-glow)"
+      />
+      <circle cx="-122" cy="0" r="4" fill="#22d3ee" />
+      <text
+        x="-106"
+        y="4"
+        fill="#a5f3fc"
+        font-family="monospace"
+        font-size="11"
+        font-weight="bold"
+        letter-spacing="2px"
+      >
+        TIME AXIS ── 時間軸
+      </text>
+      <text
+        x="60"
+        y="4"
+        fill="#64748b"
+        font-family="monospace"
+        font-size="9"
+      >
+        (過去 ➔ 未来)
+      </text>
+    </g>
 
     <!-- 10年刻みの主目盛り（Ticks） & 西暦ラベル -->
     {#each majorYears as year}
@@ -235,9 +276,9 @@
       <!-- 垂直境界線 -->
       <line
         x1="0"
-        y1="-400"
+        y1="-420"
         x2="0"
-        y2="400"
+        y2="420"
         stroke="#f59e0b"
         stroke-width="2"
         stroke-dasharray="6,4"
@@ -270,7 +311,7 @@
 
     <!-- タイムラインの始点・終点アノテーション -->
     <text
-      x={minX + 60}
+      x={minX + 80}
       y="-14"
       fill="#64748b"
       font-family="monospace"

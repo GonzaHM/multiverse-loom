@@ -158,6 +158,9 @@
           rawNodes.push({
             id: evt.id,
             type: 'eventNode',
+            draggable: false,
+            selectable: false,
+            deletable: false,
             data: {
               event: evt,
               parentMovie: movie,
@@ -189,6 +192,9 @@
           rawNodes.push({
             id: pseudoEvent.id,
             type: 'eventNode',
+            draggable: false,
+            selectable: false,
+            deletable: false,
             data: {
               event: pseudoEvent,
               parentMovie: movie,
@@ -370,6 +376,9 @@
         bind:edges={flowEdges}
         {nodeTypes}
         {edgeTypes}
+        nodesDraggable={false}
+        elementsSelectable={false}
+        nodesConnectable={false}
         fitView
         fitViewOptions={{ padding: 0.15 }}
         minZoom={0.15}
