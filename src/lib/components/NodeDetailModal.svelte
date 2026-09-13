@@ -1,15 +1,17 @@
 <script lang="ts">
-  import type { TimelineNode, Universe } from '../../types/timeline';
+  import type { TimelineNode, Universe, MovieEvent } from '../../types/timeline';
 
   let { 
     node, 
     universe, 
+    selectedEvent = null,
     isWatched, 
     onClose, 
     onToggleWatch 
   } = $props<{
     node: TimelineNode | null;
     universe?: Universe;
+    selectedEvent?: MovieEvent | null;
     isWatched: boolean;
     onClose: () => void;
     onToggleWatch: (id: string) => void;
@@ -31,7 +33,7 @@
     onclick={onClose}
     role="presentation"
   >
-    <!-- モーダル本体（スマホではボトムシート風、PCではダイアログ） -->
+    <!-- モーダル本体 -->
     <div
       class="bg-slate-900 border border-slate-700/80 rounded-2xl w-full max-w-lg max-h-[85vh] overflow-y-auto shadow-2xl p-6 text-slate-100 flex flex-col gap-4 relative"
       onclick={(e) => e.stopPropagation()}
@@ -53,7 +55,38 @@
         </svg>
       </button>
 
-      <!-- ヘッダー情報 -->
+      <!-- 選択された特定の出来事のハイライトカード（もしあれば） -->
+      {#if selectedEvent}
+        <div class="rounded-xl p-3.5 border border-cyan-500/50 bg-cyan-950/30 flex flex-col gap-1.5 shadow-md">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">
+              ⚡ 選択中の出来事: {selectedEvent.inUniverseDateLabel}
+            </span>
+            {#if selectedEvent.isBranchPoint}
+              <span class="text-[10px] text-emerald-300 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/40 font-semibold animate-pulse">
+                分岐点 (Nexus Event)
+              </span>
+            {/if}
+          </div>
+          <h4 class="text-sm font-bold text-white mt-1">
+            {selectedEvent.title.ja}
+          </h4>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            {selectedEvent.summary}
+          </p>
+          {#if selectedEvent.keyCharacters && selectedEvent.keyCharacters.length > 0}
+            <div class="flex flex-wrap gap-1 mt-1">
+              {#each selectedEvent.keyCharacters as c}
+                <span class="text-[10px] bg-slate-800 text-slate-300 px-1.5 py-0.2 rounded border border-slate-700">
+                  {c}
+                </span>
+              {/each}
+            </div>
+          {/if}
+        </div>
+      {/if}
+
+      <!-- 映画ヘッダー情報 -->
       <div class="flex gap-4 items-start">
         <div class="relative w-24 h-36 shrink-0 rounded-lg overflow-hidden bg-slate-800 shadow-md">
           <img

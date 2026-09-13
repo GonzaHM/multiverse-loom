@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Universe, FranchiseMetadata } from '../../types/timeline';
+  import type { Universe, FranchiseMetadata, Artifact } from '../../types/timeline';
 
   let {
     franchises,
@@ -9,9 +9,11 @@
     watchedCount,
     selectedUniverseId,
     selectedRelationFilter,
+    activeArtifactId,
     onSelectFranchise,
     onFilterUniverse,
     onFilterRelation,
+    onToggleArtifact,
     onExportImage
   } = $props<{
     franchises: FranchiseMetadata[];
@@ -21,9 +23,11 @@
     watchedCount: number;
     selectedUniverseId: string | 'all';
     selectedRelationFilter: 'all' | 'branches_only';
+    activeArtifactId: string | null;
     onSelectFranchise: (id: string) => void;
     onFilterUniverse: (id: string | 'all') => void;
     onFilterRelation: (filter: 'all' | 'branches_only') => void;
+    onToggleArtifact: (id: string | null) => void;
     onExportImage: () => void;
   }>();
 
@@ -40,7 +44,7 @@
 </script>
 
 <header class="absolute top-0 left-0 right-0 z-40 bg-slate-950/85 backdrop-blur-md border-b border-slate-800/80 px-3 sm:px-4 py-2 flex flex-wrap items-center justify-between gap-3 select-none">
-  <!-- 左側: シリーズスイッチャー & タイトル -->
+  <!-- 左側: シリーズスイッチャー & タイトル & 進捗 -->
   <div class="flex items-center gap-3">
     <!-- シリーズ選択ドロップダウン / スイッチャー -->
     <div class="relative">
@@ -69,7 +73,6 @@
 
       <!-- シリーズ選択ポップオーバーメニュー -->
       {#if isDropdownOpen}
-        <!-- 外側クリック検知用透明バックドロップ -->
         <div
           class="fixed inset-0 z-50"
           onclick={() => (isDropdownOpen = false)}
@@ -103,14 +106,14 @@
       {/if}
     </div>
 
-    <!-- 進捗ゲージ（選択中シリーズごと） -->
+    <!-- 進捗ゲージ -->
     <div class="flex items-center gap-2 pl-2 sm:pl-3 border-l border-slate-800">
       <div class="flex flex-col">
         <div class="flex items-center justify-between gap-2 text-[10px] text-slate-300">
           <span>進捗: <strong>{watchedCount}</strong> / {totalCount} 作品</span>
           <span class="font-mono text-cyan-400">{percentage}%</span>
         </div>
-        <div class="w-20 sm:w-32 h-1.5 bg-slate-800 rounded-full overflow-hidden mt-0.5">
+        <div class="w-20 sm:w-28 h-1.5 bg-slate-800 rounded-full overflow-hidden mt-0.5">
           <div
             class="h-full rounded-full transition-all duration-300"
             style="width: {percentage}%; background-color: {currentFranchise.theme.primaryColor};"
@@ -120,8 +123,26 @@
     </div>
   </div>
 
-  <!-- 右側: ユニバース絞り込み & 接続線 & シェアボタン -->
+  <!-- 右側: アイテム追跡 & フィルター & シェアボタン -->
   <div class="flex items-center gap-2 flex-wrap">
+    <!-- マーベル専用: 四次元キューブ（スペース・ストーン）追跡ボタン -->
+    {#if currentFranchise.id === 'marvel'}
+      <button
+        type="button"
+        onclick={() => onToggleArtifact(activeArtifactId ? null : 'tesseract-space-stone')}
+        class="px-2.5 py-1.5 rounded-lg border text-xs font-medium transition-all flex items-center gap-1.5 shadow-sm
+          {activeArtifactId === 'tesseract-space-stone'
+            ? 'bg-cyan-500/25 border-cyan-400 text-cyan-200 ring-2 ring-cyan-500/50 shadow-cyan-500/30'
+            : 'bg-slate-900 border-slate-700/80 text-cyan-400 hover:bg-slate-800 hover:border-cyan-500/60'}"
+        title="1942年からエンドゲーム、ロキまでの四次元キューブの流転経路をハイライト"
+      >
+        <span class="text-sm">🔷</span>
+        <span class="text-[11px] font-semibold">
+          {activeArtifactId ? 'キューブ追跡中' : '四次元キューブの航跡'}
+        </span>
+      </button>
+    {/if}
+
     <!-- ユニバースフィルター -->
     <div class="flex items-center gap-1 bg-slate-900/90 p-1 rounded-lg border border-slate-800 text-xs">
       <button
@@ -144,7 +165,7 @@
       {/each}
     </div>
 
-    <!-- 接続線フィルター（全線 vs 分岐・合流のみ） -->
+    <!-- 接続線フィルター -->
     <button
       type="button"
       onclick={() => onFilterRelation(selectedRelationFilter === 'all' ? 'branches_only' : 'all')}

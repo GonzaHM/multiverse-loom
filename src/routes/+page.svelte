@@ -9,20 +9,26 @@
     MiniMap,
     type Node,
     type Edge,
-    type NodeTypes
+    type NodeTypes,
+    type EdgeTypes
   } from '@xyflow/svelte';
 
   import { FRANCHISES, getFranchiseById, DEFAULT_FRANCHISE_ID } from '../data/franchises';
-  import type { TimelineNode, TimelineEdge, Universe, FranchiseMetadata } from '../types/timeline';
-  import MovieNode from '$lib/components/MovieNode.svelte';
+  import type { TimelineNode, TimelineEdge, Universe, FranchiseMetadata, MovieEvent } from '../types/timeline';
+  import MovieCardNode from '$lib/components/MovieCardNode.svelte';
+  import MultiverseEdge from '$lib/components/MultiverseEdge.svelte';
   import NodeDetailModal from '$lib/components/NodeDetailModal.svelte';
   import TimelineToolbar from '$lib/components/TimelineToolbar.svelte';
   import { getLayoutedTimeline } from '$lib/layout/dagre-layout';
   import { exportTimelineAsPng } from '$lib/utils/export-image';
 
-  // ノードコンポーネント定義
+  // カスタムノード & エッジ登録
   const nodeTypes: NodeTypes = {
-    movieNode: MovieNode
+    movieNode: MovieCardNode
+  };
+
+  const edgeTypes: EdgeTypes = {
+    multiverseEdge: MultiverseEdge
   };
 
   // 現在選択中のフランチャイズ
@@ -32,6 +38,12 @@
   // 現在のフランチャイズのタイムラインデータ
   const data = $derived(currentFranchise.timelineData);
 
+  // 展開中の映画カードID（初期状態でエンドゲームを展開して見せる）
+  let expandedMovieIds = $state<Set<string>>(new Set(['avengers-endgame-2019']));
+
+  // アイテム追跡（例: 'tesseract-space-stone'）
+  let activeArtifactId = $state<string | null>(null);
+
   // 視聴状態マップ（フランチャイズごとにlocalStorageを分離）
   let watchedState = $state<Record<string, boolean>>({});
 
@@ -39,6 +51,7 @@
   let selectedUniverseId = $state<string | 'all'>('all');
   let selectedRelationFilter = $state<'all' | 'branches_only'>('all');
   let selectedNode = $state<TimelineNode | null>(null);
+  let selectedEvent = $state<MovieEvent | null>(null);
 
   // Svelte Flow 用ノード・エッジ
   let flowNodes = $state<Node[]>([]);
@@ -56,7 +69,7 @@
     selectedNode ? data.universes.find((u) => u.id === selectedNode?.universeId) : undefined
   );
 
-  // 視聴状態の読み込み（フランチャイズ個別）
+  // 視聴状態の読み込み
   function loadWatchProgress(franchiseId: string) {
     if (!browser) return;
     try {
@@ -64,12 +77,10 @@
       if (saved) {
         watchedState = JSON.parse(saved);
       } else {
-        // 後方互換性（旧キーからのマイグレーション）
         if (franchiseId === 'marvel') {
           const legacy = localStorage.getItem('multiverse_loom_watched');
           if (legacy) {
             watchedState = JSON.parse(legacy);
-            localStorage.setItem('multiverse_loom_watched_marvel', legacy);
           } else {
             watchedState = {};
           }
@@ -114,6 +125,22 @@
     });
   }
 
+  // 映画カードの展開/収納切り替え
+  function toggleExpand(movieId: string) {
+    const next = new Set(expandedMovieIds);
+    if (next.has(movieId)) {
+      next.delete(movieId);
+    } else {
+      // スマホでは同時に1つだけ展開して見やすくする
+      if (browser && window.innerWidth < 768) {
+        next.clear();
+      }
+      next.add(movieId);
+    }
+    expandedMovieIds = next;
+    updateGraph();
+  }
+
   // グラフデータ再構築 & レイアウト計算
   function updateGraph() {
     // 1. ノードのフィルタリング & マッピング
@@ -126,6 +153,8 @@
 
     const rawNodes: Node[] = filteredRawNodes.map((n) => {
       const u = data.universes.find((uni) => uni.id === n.universeId);
+      const isExpanded = expandedMovieIds.has(n.id);
+
       return {
         id: n.id,
         type: 'movieNode',
@@ -133,9 +162,16 @@
           node: n,
           universe: u,
           isWatched: !!watchedState[n.id],
+          isExpanded,
           onToggleWatch: toggleWatch,
+          onToggleExpand: toggleExpand,
           onSelectNode: (targetNode: TimelineNode) => {
             selectedNode = targetNode;
+            selectedEvent = null;
+          },
+          onSelectEvent: (event: MovieEvent, movie: TimelineNode) => {
+            selectedNode = movie;
+            selectedEvent = event;
           }
         },
         position: { x: 0, y: 0 }
@@ -147,40 +183,42 @@
       .filter((e) => {
         // 両端のノードがアクティブか
         if (!activeNodeIds.has(e.source) || !activeNodeIds.has(e.target)) return false;
-        // エッジタイプフィルター
+        // 分岐・合流フィルター
         if (selectedRelationFilter === 'branches_only') {
-          return e.relationType === 'multiverse_branch' || e.relationType === 'crossover';
+          return (
+            e.relationType === 'multiverse_branch' ||
+            e.relationType === 'crossover' ||
+            e.relationType === 'time_travel'
+          );
         }
         return true;
       })
       .map((e) => {
-        const isBranch = e.relationType === 'multiverse_branch';
-        const isCrossover = e.relationType === 'crossover';
-        const isPrereq = e.relationType === 'prerequisite';
-
-        // スタイル設定
-        const strokeColor = e.style?.color ?? currentFranchise.theme.accentColor;
-        const width = e.style?.width ?? (isBranch || isCrossover ? 2.5 : 2);
-        const animated = e.style?.animated ?? (isBranch || isCrossover);
-        const strokeDash = e.style?.lineStyle === 'dashed' || isBranch
-          ? '5 5'
-          : e.style?.lineStyle === 'dotted' || isPrereq
-          ? '3 3'
-          : 'none';
+        const isArtifactAssociated =
+          activeArtifactId && e.associatedArtifactId === activeArtifactId;
+        const isDimmed = !!activeArtifactId && !isArtifactAssociated;
 
         return {
           id: e.id,
           source: e.source,
+          sourceHandle: e.sourceHandle ?? `${e.source}__default_source`,
           target: e.target,
-          type: 'smoothstep',
-          animated,
-          label: e.label,
-          style: `stroke: ${strokeColor}; stroke-width: ${width}; opacity: 0.85; stroke-dasharray: ${strokeDash};`
+          targetHandle: e.targetHandle ?? `${e.target}__default_target`,
+          type: 'multiverseEdge',
+          data: {
+            relationType: e.relationType,
+            label: e.label,
+            isHighlighted: isArtifactAssociated,
+            isDimmed
+          }
         };
       });
 
-    // 3. Dagreレイアウト計算
-    const layout = getLayoutedTimeline(rawNodes, rawEdges, { direction: 'LR' });
+    // 3. Dagreレイアウト計算（展開状態を考慮）
+    const layout = getLayoutedTimeline(rawNodes, rawEdges, {
+      direction: 'LR',
+      expandedNodeIds: expandedMovieIds
+    });
     flowNodes = layout.nodes;
     flowEdges = layout.edges;
   }
@@ -191,6 +229,15 @@
     currentFranchiseId = id;
     selectedUniverseId = 'all';
     selectedNode = null;
+    selectedEvent = null;
+    activeArtifactId = null;
+
+    // マーベル以外では初期展開をリセット
+    if (id === 'marvel') {
+      expandedMovieIds = new Set(['avengers-endgame-2019']);
+    } else {
+      expandedMovieIds = new Set();
+    }
 
     loadWatchProgress(id);
     updateGraph();
@@ -210,6 +257,11 @@
 
   function handleFilterRelation(filter: 'all' | 'branches_only') {
     selectedRelationFilter = filter;
+    updateGraph();
+  }
+
+  function handleToggleArtifact(id: string | null) {
+    activeArtifactId = id;
     updateGraph();
   }
 
@@ -239,7 +291,7 @@
 </svelte:head>
 
 <main class="w-screen h-screen bg-slate-950 flex flex-col relative overflow-hidden">
-  <!-- トップツールバー（シリーズスイッチャー付き） -->
+  <!-- トップツールバー（シリーズスイッチャー & アイテム追跡付き） -->
   <TimelineToolbar
     franchises={FRANCHISES}
     {currentFranchise}
@@ -248,9 +300,11 @@
     {watchedCount}
     {selectedUniverseId}
     {selectedRelationFilter}
+    {activeArtifactId}
     onSelectFranchise={handleSelectFranchise}
     onFilterUniverse={handleFilterUniverse}
     onFilterRelation={handleFilterRelation}
+    onToggleArtifact={handleToggleArtifact}
     onExportImage={handleExportImage}
   />
 
@@ -261,8 +315,9 @@
         bind:nodes={flowNodes}
         bind:edges={flowEdges}
         {nodeTypes}
+        {edgeTypes}
         fitView
-        fitViewOptions={{ padding: 0.3 }}
+        fitViewOptions={{ padding: 0.25 }}
         minZoom={0.2}
         maxZoom={1.8}
         panOnDrag={true}
@@ -305,14 +360,22 @@
     {/if}
   </div>
 
-  <!-- ノード詳細モーダル -->
+  <!-- ノード & 出来事詳細モーダル -->
   <NodeDetailModal
     node={selectedNode}
+    selectedEvent={selectedEvent}
     universe={selectedNodeUniverse}
     isWatched={selectedNode ? !!watchedState[selectedNode.id] : false}
     onClose={() => {
       selectedNode = null;
+      selectedEvent = null;
     }}
     onToggleWatch={toggleWatch}
   />
 </main>
+
+<style>
+  :global(.svelte-flow__node) {
+    transition: transform 240ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+</style>

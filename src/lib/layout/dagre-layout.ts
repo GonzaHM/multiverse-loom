@@ -3,8 +3,11 @@ import type { Node, Edge } from '@xyflow/svelte';
 
 export interface LayoutOptions {
   direction?: 'LR' | 'TB';
-  nodeWidth?: number;
-  nodeHeight?: number;
+  expandedNodeIds?: Set<string>;
+  collapsedWidth?: number;
+  collapsedHeight?: number;
+  expandedWidth?: number;
+  expandedHeight?: number;
 }
 
 export function getLayoutedTimeline(
@@ -12,39 +15,60 @@ export function getLayoutedTimeline(
   edges: Edge[],
   options: LayoutOptions = {}
 ): { nodes: Node[]; edges: Edge[] } {
-  const { direction = 'LR', nodeWidth = 260, nodeHeight = 110 } = options;
+  const {
+    direction = 'LR',
+    expandedNodeIds = new Set<string>(),
+    collapsedWidth = 260,
+    collapsedHeight = 115,
+    expandedWidth = 520,
+    expandedHeight = 235
+  } = options;
 
-  const dagreGraph = new dagre.graphlib.Graph();
+  const dagreGraph = new dagre.graphlib.Graph({ multigraph: true });
   dagreGraph.setDefaultEdgeLabel(() => ({}));
 
   dagreGraph.setGraph({
-    rankdir: direction, // 'LR' for chronological timeline, 'TB' for vertical
-    nodesep: 40,        // vertical separation between parallel branches
-    ranksep: 80,        // horizontal spacing between timeline stages
+    rankdir: direction, // 'LR' for chronological timeline
+    nodesep: 45,        // vertical separation between branches
+    ranksep: 85,        // horizontal spacing between stages
     ranker: 'network-simplex'
   });
 
+  // 1. 展開状態に応じた動的なノードサイズ登録
   nodes.forEach((node) => {
-    dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight });
+    const isExpanded = expandedNodeIds.has(node.id);
+    const width = isExpanded ? expandedWidth : collapsedWidth;
+    const height = isExpanded ? expandedHeight : collapsedHeight;
+    dagreGraph.setNode(node.id, { width, height });
   });
 
+  // 2. エッジの重複を排除してランク歪みを防止
+  const registeredPairs = new Set<string>();
   edges.forEach((edge) => {
-    dagreGraph.setEdge(edge.source, edge.target);
+    const pairKey = `${edge.source}-->${edge.target}`;
+    if (!registeredPairs.has(pairKey)) {
+      dagreGraph.setEdge(edge.source, edge.target, {}, edge.id);
+      registeredPairs.add(pairKey);
+    }
   });
 
   dagre.layout(dagreGraph);
 
+  // 3. Svelte Flow のトップレフト座標にマッピング
   const layoutedNodes = nodes.map((node) => {
     const nodeWithPosition = dagreGraph.node(node.id);
+    const isExpanded = expandedNodeIds.has(node.id);
+    const width = isExpanded ? expandedWidth : collapsedWidth;
+    const height = isExpanded ? expandedHeight : collapsedHeight;
+
     return {
       ...node,
       position: {
-        x: nodeWithPosition.x - nodeWidth / 2,
-        y: nodeWithPosition.y - nodeHeight / 2
+        x: nodeWithPosition.x - width / 2,
+        y: nodeWithPosition.y - height / 2
       }
     };
   });
 
   return { nodes: layoutedNodes, edges };
 }
-

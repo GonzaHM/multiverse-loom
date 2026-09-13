@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "2.0.0",
   "lastUpdated": "2026-09-13",
   "universes": [
     {
@@ -10,6 +10,15 @@
       "secondaryColor": "#7F1D1D",
       "franchise": "marvel",
       "description": "マーベル・シネマティック・ユニバース（MCU）の中心となる主時間軸。かつてTVAによって『神聖時間軸』として徹底管理されていた。"
+    },
+    {
+      "id": "branch-2012-loki",
+      "name": "Branch-2012 (ロキ逃亡 分岐軸)",
+      "designation": "Nexus-Branch-2012",
+      "color": "#10B981",
+      "secondaryColor": "#064E3B",
+      "franchise": "marvel",
+      "description": "エンドゲームのタイム泥棒失敗時にロキがキューブを持ち逃げして生じた分岐時間軸。"
     },
     {
       "id": "tva-outside-time",
@@ -39,6 +48,19 @@
       "description": "マーク・ウェブ監督、アンドリュー・ガーフィールド主演『アメイジング・スパイダーマン』の世界。"
     }
   ],
+  "artifacts": [
+    {
+      "id": "tesseract-space-stone",
+      "name": {
+        "ja": "四次元キューブ / スペース・ストーン",
+        "en": "Tesseract / Space Stone"
+      },
+      "type": "infinity_stone",
+      "color": "#06B6D4",
+      "description": "空間を自在に跳躍するインフィニティ・ストーン。第二次大戦からエンドゲームのタイム泥棒、ロキの分岐へと数奇な運命を辿る。",
+      "aliases": ["Tesseract", "Cosmic Cube", "Space Stone"]
+    }
+  ],
   "nodes": [
     {
       "id": "captain-america-the-first-avenger-2011",
@@ -57,7 +79,33 @@
       "summary": "第二次大戦中、極秘実験で超人兵士となったスティーブ・ロジャースが、四次元キューブを狙うヒドラのレッドスカルに立ち向かうMCU史の原点。",
       "watchStatus": false,
       "characters": ["Steve Rogers", "Peggy Carter", "Bucky Barnes", "Red Skull"],
-      "tags": ["Infinity Saga", "Phase 1", "Super Soldier", "Tesseract"]
+      "tags": ["Infinity Saga", "Phase 1", "Super Soldier", "Tesseract"],
+      "events": [
+        {
+          "id": "evt-1942-tonsberg-tesseract",
+          "movieId": "captain-america-the-first-avenger-2011",
+          "title": { "ja": "トンスベルグでキューブ奪取", "en": "Tesseract Seized in Tønsberg" },
+          "inUniverseYear": 1942,
+          "inUniverseDateLabel": "1942年",
+          "summary": "レッドスカルが教会の壁画から四次元キューブを発掘しヒドラの兵器開発を開始。",
+          "order": 1,
+          "eventType": "canon_milestone",
+          "keyArtifacts": ["tesseract-space-stone"],
+          "keyCharacters": ["Red Skull"]
+        },
+        {
+          "id": "evt-1945-valkyrie-crash",
+          "movieId": "captain-america-the-first-avenger-2011",
+          "title": { "ja": "ワルキューレ墜落 & キューブ海没", "en": "Valkyrie Crash & Tesseract Sinks" },
+          "inUniverseYear": 1945,
+          "inUniverseDateLabel": "1945年",
+          "summary": "スティーブが機体ごと北極の氷原に墜落。キューブは海没しハワード・スタークが回収。",
+          "order": 2,
+          "eventType": "canon_milestone",
+          "keyArtifacts": ["tesseract-space-stone"],
+          "keyCharacters": ["Steve Rogers", "Howard Stark"]
+        }
+      ]
     },
     {
       "id": "iron-man-2008",
@@ -76,7 +124,20 @@
       "summary": "天才兵器開発者トニー・スタークが拉致事件を契機にパワードスーツを開発。「アベンジャーズ計画」へと繋がる記念すべきMCU第1作。",
       "watchStatus": false,
       "characters": ["Tony Stark", "Pepper Potts", "James Rhodes", "Nick Fury"],
-      "tags": ["Infinity Saga", "Phase 1", "Avenger Initiative"]
+      "tags": ["Infinity Saga", "Phase 1", "Avenger Initiative"],
+      "events": [
+        {
+          "id": "evt-2010-i-am-iron-man",
+          "movieId": "iron-man-2008",
+          "title": { "ja": "「私がアイアンマンだ」宣言", "en": "I am Iron Man Declaration" },
+          "inUniverseYear": 2010,
+          "inUniverseDateLabel": "2010年",
+          "summary": "トニー・スタークが記者会見で正体を公表。フューリーがアベンジャーズ計画を提案。",
+          "order": 1,
+          "eventType": "canon_milestone",
+          "keyCharacters": ["Tony Stark", "Nick Fury"]
+        }
+      ]
     },
     {
       "id": "the-avengers-2012",
@@ -95,7 +156,21 @@
       "summary": "ロキ率いる異星人軍団によるNY侵略を阻止するため、最強ヒーローたちがアベンジャーズとして初集結。後のタイムトラベル作戦の重要拠点。",
       "watchStatus": false,
       "characters": ["Tony Stark", "Steve Rogers", "Thor", "Bruce Banner", "Natasha Romanoff", "Clint Barton", "Loki"],
-      "tags": ["Infinity Saga", "Phase 1", "Battle of NY"]
+      "tags": ["Infinity Saga", "Phase 1", "Battle of NY"],
+      "events": [
+        {
+          "id": "evt-2012-battle-of-ny",
+          "movieId": "the-avengers-2012",
+          "title": { "ja": "ニューヨーク決戦 & ポータル閉鎖", "en": "Battle of NY & Portal Closure" },
+          "inUniverseYear": 2012,
+          "inUniverseDateLabel": "2012年5月4日",
+          "summary": "ロキがキューブで開いたワームホールをナターシャが閉鎖。ソーがロキとキューブをアスガルドへ護送。",
+          "order": 1,
+          "eventType": "canon_milestone",
+          "keyArtifacts": ["tesseract-space-stone"],
+          "keyCharacters": ["Tony Stark", "Steve Rogers", "Thor", "Loki"]
+        }
+      ]
     },
     {
       "id": "spider-man-2002",
@@ -114,7 +189,20 @@
       "summary": "特殊なクモに噛まれたピーター・パーカーが『大いなる力には大いなる責任が伴う』を胸に悪と戦う、サム・ライミ版伝説の幕開け。",
       "watchStatus": false,
       "characters": ["Peter Parker (Earth-96283)", "Norman Osborn", "Mary Jane Watson"],
-      "tags": ["Raimi-verse", "Legacy Spider-Man"]
+      "tags": ["Raimi-verse", "Legacy Spider-Man"],
+      "events": [
+        {
+          "id": "evt-2002-raimi-origin",
+          "movieId": "spider-man-2002",
+          "title": { "ja": "ピーターの覚醒とグリーン・ゴブリン誕生", "en": "Peter's Awakening & Green Goblin" },
+          "inUniverseYear": 2002,
+          "inUniverseDateLabel": "2002年",
+          "summary": "ベンおじさんの死を経てヒーローへ。ノーマン・オズボーンがゴブリン化。",
+          "order": 1,
+          "eventType": "canon_milestone",
+          "keyCharacters": ["Peter Parker (Earth-96283)", "Norman Osborn"]
+        }
+      ]
     },
     {
       "id": "the-amazing-spider-man-2012",
@@ -133,7 +221,20 @@
       "summary": "両親失踪の真相を追うピーター・パーカーが新たな能力に目覚め、オズコープ社のコナーズ博士（リザード）に立ち向かうリブート第1作。",
       "watchStatus": false,
       "characters": ["Peter Parker (Earth-120703)", "Gwen Stacy", "Curt Connors"],
-      "tags": ["Webb-verse", "Legacy Spider-Man"]
+      "tags": ["Webb-verse", "Legacy Spider-Man"],
+      "events": [
+        {
+          "id": "evt-2012-webb-lizard",
+          "movieId": "the-amazing-spider-man-2012",
+          "title": { "ja": "オズコープの遺伝子実験とリザード戦", "en": "Oscorp Genetics & Lizard Battle" },
+          "inUniverseYear": 2012,
+          "inUniverseDateLabel": "2012年",
+          "summary": "異種間遺伝子交配によりリザードと化したコナーズ博士との死闘。",
+          "order": 1,
+          "eventType": "canon_milestone",
+          "keyCharacters": ["Peter Parker (Earth-120703)", "Curt Connors"]
+        }
+      ]
     },
     {
       "id": "avengers-endgame-2019",
@@ -146,13 +247,63 @@
       "type": "movie",
       "phase": 3,
       "chronologicalOrder": 23,
-      "inUniverseTimeLabel": "2023 (Time Heist to 2012/1970)",
+      "inUniverseTimeLabel": "2023 (1970/2012/1949)",
       "universeId": "earth-616",
       "posterUrl": "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
-      "summary": "サノスにより全宇宙の生命の半分が消し去られて5年後、ヒーローたちは量子世界を経由したタイム泥棒作戦でインフィニティ・ストーン奪還に挑む。",
+      "summary": "量子世界を経由したタイム泥棒作戦。1970年、2012年NYへの時間潜入を経て、サノスとの最終決戦へ。",
       "watchStatus": false,
       "characters": ["Tony Stark", "Steve Rogers", "Thor", "Bruce Banner", "Natasha Romanoff", "Clint Barton", "Thanos"],
-      "tags": ["Infinity Saga Climax", "Phase 3", "Time Travel"]
+      "tags": ["Infinity Saga Climax", "Phase 3", "Time Travel", "Time Heist"],
+      "events": [
+        {
+          "id": "evt-1970-camp-lehigh-heist",
+          "movieId": "avengers-endgame-2019",
+          "title": { "ja": "キャンプ・レハイ潜入: キューブ強奪", "en": "Camp Lehigh Infiltration: Tesseract Heist" },
+          "inUniverseYear": 1970,
+          "inUniverseDateLabel": "1970年4月7日",
+          "summary": "2012年の失策後、トニーとスティーブが1970年へ時間跳躍。キューブを確保し父ハワードと対話。",
+          "order": 1,
+          "eventType": "time_travel_arrival",
+          "keyArtifacts": ["tesseract-space-stone"],
+          "keyCharacters": ["Tony Stark (2023)", "Steve Rogers (2023)", "Howard Stark"]
+        },
+        {
+          "id": "evt-2012-endgame-heist-fumble",
+          "movieId": "avengers-endgame-2019",
+          "title": { "ja": "タイム泥棒の失策 & ロキ強奪", "en": "Time Heist Fumble & Loki Escapes" },
+          "inUniverseYear": 2012,
+          "inUniverseDateLabel": "2012年5月4日 (決戦直後)",
+          "summary": "2012年ハルクの暴走でケースが開き、ロキがキューブを奪って空間転移。新たな分岐が発生！",
+          "order": 2,
+          "eventType": "nexus_branch_point",
+          "isBranchPoint": true,
+          "keyArtifacts": ["tesseract-space-stone"],
+          "keyCharacters": ["Tony Stark (2023)", "Loki (2012)", "Hulk (2012)"]
+        },
+        {
+          "id": "evt-2023-tony-snap",
+          "movieId": "avengers-endgame-2019",
+          "title": { "ja": "トニーのスナップ & サノス消滅", "en": "Tony's Snap & Victory" },
+          "inUniverseYear": 2023,
+          "inUniverseDateLabel": "2023年10月",
+          "summary": "1970年から持ち帰ったキューブを含む6つのストーンを起動。『私はアイアンマンだ』と唱え散る。",
+          "order": 3,
+          "eventType": "canon_milestone",
+          "keyArtifacts": ["tesseract-space-stone"],
+          "keyCharacters": ["Tony Stark", "Thanos (2014)"]
+        },
+        {
+          "id": "evt-1949-steve-peggy-dance",
+          "movieId": "avengers-endgame-2019",
+          "title": { "ja": "スティーブとペギーの約束のダンス", "en": "Steve & Peggy's Promised Dance" },
+          "inUniverseYear": 1949,
+          "inUniverseDateLabel": "1949年",
+          "summary": "ストーン返還を終えたスティーブが1949年に戻り、ペギーと生涯を共にする選択をする。",
+          "order": 4,
+          "eventType": "character_retirement",
+          "keyCharacters": ["Steve Rogers", "Peggy Carter"]
+        }
+      ]
     },
     {
       "id": "loki-season-1-2021",
@@ -165,13 +316,39 @@
       "type": "series",
       "phase": 4,
       "chronologicalOrder": 24,
-      "inUniverseTimeLabel": "時間の外側 (2012年NYから分岐)",
+      "inUniverseTimeLabel": "時間の外側 (2012年分岐)",
       "universeId": "tva-outside-time",
       "posterUrl": "https://image.tmdb.org/t/p/w500/voHUmlvjys5gYe37DYLmEvZaWzK.jpg",
-      "summary": "エンドゲームのNY作戦中に四次元キューブを奪って逃亡したロキがTVAに拘束され、神聖時間軸の真実と多元宇宙解放の引き金を引く。",
+      "summary": "エンドゲームの2012年NYから四次元キューブで逃亡したロキがTVAに拘束され、神聖時間軸の真実と多元宇宙解放の引き金を引く。",
       "watchStatus": false,
       "characters": ["Loki (Variant L1130)", "Mobius M. Mobius", "Sylvie", "He Who Remains"],
-      "tags": ["Multiverse Saga", "Phase 4", "TVA", "Sacred Timeline Fracture"]
+      "tags": ["Multiverse Saga", "Phase 4", "TVA", "Sacred Timeline Fracture"],
+      "events": [
+        {
+          "id": "evt-2012-branch-loki-tva-arrest",
+          "movieId": "loki-season-1-2021",
+          "title": { "ja": "ゴビ砂漠漂着 & TVAによる剪定", "en": "Gobi Desert Landing & TVA Pruning" },
+          "inUniverseYear": 2012,
+          "inUniverseDateLabel": "2012年 (分岐時間軸)",
+          "summary": "砂漠へ逃亡したロキをTVAミニットメンが急襲・連行。リセットチャージで分岐軸を剪定。",
+          "order": 1,
+          "eventType": "timeline_pruning",
+          "keyArtifacts": ["tesseract-space-stone"],
+          "keyCharacters": ["Loki (Variant L1130)", "Hunter B-15"]
+        },
+        {
+          "id": "evt-null-tva-paperweight",
+          "movieId": "loki-season-1-2021",
+          "title": { "ja": "TVAデスクの文鎮と化したストーン", "en": "Infinity Stones as Paperweights" },
+          "inUniverseYear": 9999,
+          "inUniverseDateLabel": "時間の外側",
+          "summary": "引き出しに無造作に転がる大量のストーンを目撃し、ロキは全宇宙最大の無力感を味わう。",
+          "order": 2,
+          "eventType": "canon_milestone",
+          "keyArtifacts": ["tesseract-space-stone"],
+          "keyCharacters": ["Loki (Variant L1130)", "Casey"]
+        }
+      ]
     },
     {
       "id": "spider-man-no-way-home-2021",
@@ -187,18 +364,45 @@
       "inUniverseTimeLabel": "2024年 秋",
       "universeId": "earth-616",
       "posterUrl": "https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
-      "summary": "正体が露見したピーターの願いでストレンジが唱えた忘却魔術が暴走。歴代ライミ版・ウェブ版のヴィランとスパイダーマンたちが次元を超えて集結する。",
+      "summary": "正体が露見したピーターの魔術暴走により、歴代ライミ版・ウェブ版のヴィランとスパイダーマンたちが次元を超えて集結する。",
       "watchStatus": false,
       "characters": [
         "Peter Parker (Earth-616)",
         "Peter Parker (Earth-96283)",
         "Peter Parker (Earth-120703)",
         "Doctor Strange",
-        "Green Goblin",
-        "Doctor Octopus",
-        "Electro"
+        "Green Goblin"
       ],
-      "tags": ["Multiverse Saga", "Phase 4", "Spider-Verse Collision"]
+      "tags": ["Multiverse Saga", "Phase 4", "Spider-Verse Collision"],
+      "events": [
+        {
+          "id": "evt-2024-nwh-runes-botched",
+          "movieId": "spider-man-no-way-home-2021",
+          "title": { "ja": "忘却魔術の暴走 & 次元境界の裂開", "en": "Runes of Kof-Kol Tampered" },
+          "inUniverseYear": 2024,
+          "inUniverseDateLabel": "2024年11月",
+          "summary": "ピーターの度重なる口出しで呪文が暴走。異次元からピーターの正体を知る者が引き寄せられる。",
+          "order": 1,
+          "eventType": "multiverse_crossover",
+          "keyCharacters": ["Stephen Strange", "Peter Parker (Earth-616)"]
+        },
+        {
+          "id": "evt-2024-nwh-spider-climax",
+          "movieId": "spider-man-no-way-home-2021",
+          "title": { "ja": "自由の女神決戦: 三世代集結と完全忘却", "en": "Statue of Liberty Battle" },
+          "inUniverseYear": 2024,
+          "inUniverseDateLabel": "2024年11月",
+          "summary": "3人のスパイダーマンがヴィランを治療。次元崩壊を防ぐため、ピーターは自らの記憶消去を受け入れる。",
+          "order": 2,
+          "eventType": "canon_milestone",
+          "keyCharacters": [
+            "Peter Parker (Earth-616)",
+            "Peter Parker (Earth-96283)",
+            "Peter Parker (Earth-120703)",
+            "Norman Osborn"
+          ]
+        }
+      ]
     },
     {
       "id": "doctor-strange-in-the-multiverse-of-madness-2022",
@@ -217,149 +421,155 @@
       "summary": "多元宇宙を行き来する少女アメリカ・チャベスを守るため、ストレンジは禁断の書ダークホールドに呑まれたワンダと狂乱のマルチバースを駆け巡る。",
       "watchStatus": false,
       "characters": ["Stephen Strange", "Wanda Maximoff", "America Chavez", "Wong"],
-      "tags": ["Multiverse Saga", "Phase 4", "Incursion", "Earth-838"]
+      "tags": ["Multiverse Saga", "Phase 4", "Incursion", "Earth-838"],
+      "events": [
+        {
+          "id": "evt-2024-mom-incursion",
+          "movieId": "doctor-strange-in-the-multiverse-of-madness-2022",
+          "title": { "ja": "狂乱の多元宇宙とダークホールドの破壊", "en": "Multiverse Madness & Darkhold Destroyed" },
+          "inUniverseYear": 2025,
+          "inUniverseDateLabel": "2025年",
+          "summary": "アース838への転移を経て、ワンダはすべての宇宙のダークホールドを抹消し自ら山に埋もれる。",
+          "order": 1,
+          "eventType": "canon_milestone",
+          "keyCharacters": ["Stephen Strange", "Wanda Maximoff", "America Chavez"]
+        }
+      ]
     }
   ],
   "edges": [
     {
-      "id": "edge-cap1-avengers",
+      "id": "edge-cap1-to-ocean",
       "source": "captain-america-the-first-avenger-2011",
-      "target": "the-avengers-2012",
-      "relationType": "direct_sequel",
-      "label": "アベンジャーズ招集",
-      "description": "70年の眠りから目覚めたキャプテン・アメリカがアベンジャーズへ合流。",
-      "style": {
-        "lineStyle": "solid",
-        "color": "#E23636",
-        "animated": false,
-        "width": 2
-      }
+      "sourceHandle": "evt-1942-tonsberg-tesseract__source",
+      "target": "captain-america-the-first-avenger-2011",
+      "targetHandle": "evt-1945-valkyrie-crash__target",
+      "relationType": "chronological",
+      "label": "ヒドラ兵器化から海没へ",
+      "associatedArtifactId": "tesseract-space-stone"
     },
     {
-      "id": "edge-ironman-avengers",
-      "source": "iron-man-2008",
-      "target": "the-avengers-2012",
-      "relationType": "direct_sequel",
-      "label": "アベンジャーズ結成",
-      "description": "トニー・スタークがNY決戦へ主力として参戦。",
-      "style": {
-        "lineStyle": "solid",
-        "color": "#E23636",
-        "animated": false,
-        "width": 2
-      }
-    },
-    {
-      "id": "edge-avengers-endgame",
-      "source": "the-avengers-2012",
+      "id": "edge-1945-to-1970-custody",
+      "source": "captain-america-the-first-avenger-2011",
+      "sourceHandle": "evt-1945-valkyrie-crash__source",
       "target": "avengers-endgame-2019",
-      "relationType": "direct_sequel",
-      "label": "サノス最終決戦 & 2012年NYへの時間潜入",
-      "description": "インフィニティ・サーガの集大成。四次元キューブ回収のため時間を遡る。",
-      "style": {
-        "lineStyle": "solid",
-        "color": "#E23636",
-        "animated": false,
-        "width": 3
-      }
+      "targetHandle": "evt-1970-camp-lehigh-heist__target",
+      "relationType": "chronological",
+      "label": "ハワード回収 ➔ レハイ地下保管",
+      "associatedArtifactId": "tesseract-space-stone"
     },
     {
-      "id": "edge-endgame-loki",
+      "id": "edge-ironman-to-avengers",
+      "source": "iron-man-2008",
+      "sourceHandle": "evt-2010-i-am-iron-man__source",
+      "target": "the-avengers-2012",
+      "targetHandle": "evt-2012-battle-of-ny__target",
+      "relationType": "direct_sequel",
+      "label": "アベンジャーズ結成"
+    },
+    {
+      "id": "edge-1970-to-2012-avengers",
       "source": "avengers-endgame-2019",
+      "sourceHandle": "evt-1970-camp-lehigh-heist__source",
+      "target": "the-avengers-2012",
+      "targetHandle": "evt-2012-battle-of-ny__target",
+      "relationType": "chronological",
+      "label": "ペガサス計画 ➔ ロキ奪取",
+      "associatedArtifactId": "tesseract-space-stone"
+    },
+    {
+      "id": "edge-2012-ny-to-heist",
+      "source": "the-avengers-2012",
+      "sourceHandle": "evt-2012-battle-of-ny__source",
+      "target": "avengers-endgame-2019",
+      "targetHandle": "evt-2012-endgame-heist-fumble__target",
+      "relationType": "chronological",
+      "label": "決戦直後: ロビーでの奪還作戦"
+    },
+    {
+      "id": "edge-endgame-to-1970-jump",
+      "source": "avengers-endgame-2019",
+      "sourceHandle": "evt-2012-endgame-heist-fumble__source",
+      "target": "avengers-endgame-2019",
+      "targetHandle": "evt-1970-camp-lehigh-heist__target",
+      "relationType": "time_travel",
+      "label": "時間跳躍: 1970年へ再潜入！",
+      "associatedArtifactId": "tesseract-space-stone"
+    },
+    {
+      "id": "edge-heist-to-loki-branch",
+      "source": "avengers-endgame-2019",
+      "sourceHandle": "evt-2012-endgame-heist-fumble__source",
       "target": "loki-season-1-2021",
+      "targetHandle": "evt-2012-branch-loki-tva-arrest__target",
       "relationType": "multiverse_branch",
-      "label": "時間軸分岐: ロキ逃亡",
-      "description": "2012年のロキがキューブを持ち逃げし、神聖時間軸から分岐してTVAへ連行。",
-      "style": {
-        "lineStyle": "dashed",
-        "color": "#F59E0B",
-        "animated": true,
-        "width": 2.5
-      }
+      "label": "時間軸分岐: ロキ逃亡！",
+      "associatedArtifactId": "tesseract-space-stone"
     },
     {
-      "id": "edge-loki-nwh",
+      "id": "edge-loki-to-tva-paperweight",
       "source": "loki-season-1-2021",
-      "target": "spider-man-no-way-home-2021",
-      "relationType": "multiverse_branch",
-      "label": "剪定停止によるマルチバース境界脆弱化",
-      "description": "TVAの剪定停止により、異次元の存在が引き寄せられやすくなる土壌が完成。",
-      "style": {
-        "lineStyle": "dashed",
-        "color": "#F59E0B",
-        "animated": true,
-        "width": 2
-      }
+      "sourceHandle": "evt-2012-branch-loki-tva-arrest__source",
+      "target": "loki-season-1-2021",
+      "targetHandle": "evt-null-tva-paperweight__target",
+      "relationType": "chronological",
+      "label": "時間の外側へ連行 & 押収",
+      "associatedArtifactId": "tesseract-space-stone"
     },
     {
-      "id": "edge-endgame-nwh",
+      "id": "edge-1970-heist-to-2023-snap",
       "source": "avengers-endgame-2019",
-      "target": "spider-man-no-way-home-2021",
-      "relationType": "direct_sequel",
-      "label": "トニー・スタークの遺産",
-      "description": "エンドゲーム後の世界でのピーターの葛藤。",
-      "style": {
-        "lineStyle": "solid",
-        "color": "#E23636",
-        "animated": false,
-        "width": 2
-      }
+      "sourceHandle": "evt-1970-camp-lehigh-heist__source",
+      "target": "avengers-endgame-2019",
+      "targetHandle": "evt-2023-tony-snap__target",
+      "relationType": "time_travel",
+      "label": "2023年帰還 ➔ トニースナップ",
+      "associatedArtifactId": "tesseract-space-stone"
     },
     {
-      "id": "edge-raimi-nwh",
+      "id": "edge-snap-to-1949-steve",
+      "source": "avengers-endgame-2019",
+      "sourceHandle": "evt-2023-tony-snap__source",
+      "target": "avengers-endgame-2019",
+      "targetHandle": "evt-1949-steve-peggy-dance__target",
+      "relationType": "time_travel",
+      "label": "時間跳躍: 1949年へ帰還・引退"
+    },
+    {
+      "id": "edge-endgame-to-nwh",
+      "source": "avengers-endgame-2019",
+      "sourceHandle": "evt-2023-tony-snap__source",
+      "target": "spider-man-no-way-home-2021",
+      "targetHandle": "evt-2024-nwh-runes-botched__target",
+      "relationType": "direct_sequel",
+      "label": "トニー亡き世界での苦闘"
+    },
+    {
+      "id": "edge-raimi-to-nwh",
       "source": "spider-man-2002",
+      "sourceHandle": "evt-2002-raimi-origin__source",
       "target": "spider-man-no-way-home-2021",
+      "targetHandle": "evt-2024-nwh-spider-climax__target",
       "relationType": "crossover",
-      "label": "次元交差: ライミ版合流",
-      "description": "魔術暴走によりEarth-96283から歴代ヴィランおよびピーター2が招喚。",
-      "style": {
-        "lineStyle": "dashed",
-        "color": "#DC2626",
-        "animated": true,
-        "width": 2.5
-      }
+      "label": "次元交差: ライミ版合流"
     },
     {
-      "id": "edge-webb-nwh",
+      "id": "edge-webb-to-nwh",
       "source": "the-amazing-spider-man-2012",
+      "sourceHandle": "evt-2012-webb-lizard__source",
       "target": "spider-man-no-way-home-2021",
+      "targetHandle": "evt-2024-nwh-spider-climax__target",
       "relationType": "crossover",
-      "label": "次元交差: ウェブ版合流",
-      "description": "魔術暴走によりEarth-120703からリザード、エレクトロ、ピーター3が招喚。",
-      "style": {
-        "lineStyle": "dashed",
-        "color": "#2563EB",
-        "animated": true,
-        "width": 2.5
-      }
+      "label": "次元交差: ウェブ版合流"
     },
     {
-      "id": "edge-nwh-mom",
+      "id": "edge-nwh-to-mom",
       "source": "spider-man-no-way-home-2021",
+      "sourceHandle": "evt-2024-nwh-spider-climax__source",
       "target": "doctor-strange-in-the-multiverse-of-madness-2022",
+      "targetHandle": "evt-2024-mom-incursion__target",
       "relationType": "direct_sequel",
-      "label": "マルチバース魔術の余波",
-      "description": "NWHを経て、本格的なマルチバース崩壊（インカージョン）の脅威に対峙。",
-      "style": {
-        "lineStyle": "solid",
-        "color": "#E23636",
-        "animated": false,
-        "width": 2
-      }
-    },
-    {
-      "id": "edge-loki-mom",
-      "source": "loki-season-1-2021",
-      "target": "doctor-strange-in-the-multiverse-of-madness-2022",
-      "relationType": "prerequisite",
-      "label": "推奨視聴: 多元宇宙とインカージョンの前提",
-      "description": "時間軸分岐や変異体の概念など、世界観理解のための重要リンク。",
-      "style": {
-        "lineStyle": "dotted",
-        "color": "#8B5CF6",
-        "animated": false,
-        "width": 1.5
-      }
+      "label": "マルチバース魔術の余波"
     }
   ]
 }
