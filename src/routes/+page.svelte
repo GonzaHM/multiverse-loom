@@ -12,23 +12,27 @@
     type NodeTypes
   } from '@xyflow/svelte';
 
-  import sampleData from '../data/mcu-multiverse.sample.json';
-  import type { TimelineNode, TimelineEdge, Universe, MultiverseTimelineData } from '../types/timeline';
+  import { FRANCHISES, getFranchiseById, DEFAULT_FRANCHISE_ID } from '../data/franchises';
+  import type { TimelineNode, TimelineEdge, Universe, FranchiseMetadata } from '../types/timeline';
   import MovieNode from '$lib/components/MovieNode.svelte';
   import NodeDetailModal from '$lib/components/NodeDetailModal.svelte';
   import TimelineToolbar from '$lib/components/TimelineToolbar.svelte';
   import { getLayoutedTimeline } from '$lib/layout/dagre-layout';
   import { exportTimelineAsPng } from '$lib/utils/export-image';
 
-  // データソース
-  const data = sampleData as unknown as MultiverseTimelineData;
-
   // ノードコンポーネント定義
   const nodeTypes: NodeTypes = {
     movieNode: MovieNode
   };
 
-  // 視聴状態マップ（ローカルストレージに保存）
+  // 現在選択中のフランチャイズ
+  let currentFranchiseId = $state<string>(DEFAULT_FRANCHISE_ID);
+  const currentFranchise = $derived<FranchiseMetadata>(getFranchiseById(currentFranchiseId));
+
+  // 現在のフランチャイズのタイムラインデータ
+  const data = $derived(currentFranchise.timelineData);
+
+  // 視聴状態マップ（フランチャイズごとにlocalStorageを分離）
   let watchedState = $state<Record<string, boolean>>({});
 
   // フィルター・選択状態
@@ -52,6 +56,33 @@
     selectedNode ? data.universes.find((u) => u.id === selectedNode?.universeId) : undefined
   );
 
+  // 視聴状態の読み込み（フランチャイズ個別）
+  function loadWatchProgress(franchiseId: string) {
+    if (!browser) return;
+    try {
+      const saved = localStorage.getItem(`multiverse_loom_watched_${franchiseId}`);
+      if (saved) {
+        watchedState = JSON.parse(saved);
+      } else {
+        // 後方互換性（旧キーからのマイグレーション）
+        if (franchiseId === 'marvel') {
+          const legacy = localStorage.getItem('multiverse_loom_watched');
+          if (legacy) {
+            watchedState = JSON.parse(legacy);
+            localStorage.setItem('multiverse_loom_watched_marvel', legacy);
+          } else {
+            watchedState = {};
+          }
+        } else {
+          watchedState = {};
+        }
+      }
+    } catch (e) {
+      console.error('LocalStorage read error:', e);
+      watchedState = {};
+    }
+  }
+
   // 視聴状態の切り替え
   function toggleWatch(nodeId: string) {
     const next = !watchedState[nodeId];
@@ -59,7 +90,10 @@
 
     if (browser) {
       try {
-        localStorage.setItem('multiverse_loom_watched', JSON.stringify(watchedState));
+        localStorage.setItem(
+          `multiverse_loom_watched_${currentFranchiseId}`,
+          JSON.stringify(watchedState)
+        );
       } catch (e) {
         console.error('LocalStorage write error:', e);
       }
@@ -111,7 +145,7 @@
     // 2. エッジのフィルタリング & マッピング
     const rawEdges: Edge[] = data.edges
       .filter((e) => {
-        // ノードが存在するか
+        // 両端のノードがアクティブか
         if (!activeNodeIds.has(e.source) || !activeNodeIds.has(e.target)) return false;
         // エッジタイプフィルター
         if (selectedRelationFilter === 'branches_only') {
@@ -124,19 +158,24 @@
         const isCrossover = e.relationType === 'crossover';
         const isPrereq = e.relationType === 'prerequisite';
 
-        let strokeColor = '#06b6d4'; // default cyan
-        if (isBranch) strokeColor = '#f59e0b'; // amber
-        if (isCrossover) strokeColor = '#ec4899'; // pink
-        if (isPrereq) strokeColor = '#8b5cf6'; // purple
+        // スタイル設定
+        const strokeColor = e.style?.color ?? currentFranchise.theme.accentColor;
+        const width = e.style?.width ?? (isBranch || isCrossover ? 2.5 : 2);
+        const animated = e.style?.animated ?? (isBranch || isCrossover);
+        const strokeDash = e.style?.lineStyle === 'dashed' || isBranch
+          ? '5 5'
+          : e.style?.lineStyle === 'dotted' || isPrereq
+          ? '3 3'
+          : 'none';
 
         return {
           id: e.id,
           source: e.source,
           target: e.target,
           type: 'smoothstep',
-          animated: isBranch || isCrossover,
+          animated,
           label: e.label,
-          style: `stroke: ${strokeColor}; stroke-width: ${isBranch || isCrossover ? 2.5 : 2}; opacity: 0.85; stroke-dasharray: ${isBranch || isPrereq ? '5 5' : 'none'};`
+          style: `stroke: ${strokeColor}; stroke-width: ${width}; opacity: 0.85; stroke-dasharray: ${strokeDash};`
         };
       });
 
@@ -144,6 +183,23 @@
     const layout = getLayoutedTimeline(rawNodes, rawEdges, { direction: 'LR' });
     flowNodes = layout.nodes;
     flowEdges = layout.edges;
+  }
+
+  // シリーズ切り替え
+  function handleSelectFranchise(id: string) {
+    if (id === currentFranchiseId) return;
+    currentFranchiseId = id;
+    selectedUniverseId = 'all';
+    selectedNode = null;
+
+    loadWatchProgress(id);
+    updateGraph();
+
+    if (browser) {
+      const url = new URL(window.location.href);
+      url.searchParams.set('series', id);
+      window.history.replaceState({}, '', url.toString());
+    }
   }
 
   // フィルター変更ハンドラ
@@ -157,39 +213,45 @@
     updateGraph();
   }
 
+  // 画像エクスポート
+  function handleExportImage() {
+    const fileName = `multiverse-loom-${currentFranchise.slug}-progress.png`;
+    exportTimelineAsPng('.svelte-flow__viewport', fileName);
+  }
+
   onMount(() => {
-    // ローカルストレージ復元
     if (browser) {
-      try {
-        const saved = localStorage.getItem('multiverse_loom_watched');
-        if (saved) {
-          watchedState = JSON.parse(saved);
-        }
-      } catch (e) {
-        console.error('LocalStorage read error:', e);
+      const params = new URLSearchParams(window.location.search);
+      const seriesParam = params.get('series') ?? params.get('franchise');
+      if (seriesParam && FRANCHISES.some((f) => f.id === seriesParam || f.slug === seriesParam)) {
+        currentFranchiseId = seriesParam;
       }
     }
 
+    loadWatchProgress(currentFranchiseId);
     updateGraph();
     isReady = true;
   });
 </script>
 
 <svelte:head>
-  <title>Multiverse Loom - マルチバース時系列相関図</title>
+  <title>Multiverse Loom - {currentFranchise.title.ja}</title>
 </svelte:head>
 
 <main class="w-screen h-screen bg-slate-950 flex flex-col relative overflow-hidden">
-  <!-- トップツールバー -->
+  <!-- トップツールバー（シリーズスイッチャー付き） -->
   <TimelineToolbar
+    franchises={FRANCHISES}
+    {currentFranchise}
     universes={data.universes}
     {totalCount}
     {watchedCount}
     {selectedUniverseId}
     {selectedRelationFilter}
+    onSelectFranchise={handleSelectFranchise}
     onFilterUniverse={handleFilterUniverse}
     onFilterRelation={handleFilterRelation}
-    onExportImage={exportTimelineAsPng}
+    onExportImage={handleExportImage}
   />
 
   <!-- グラフキャンバスエリア -->
@@ -226,7 +288,7 @@
         <MiniMap
           nodeColor={(n) => {
             const isW = (n.data as any)?.isWatched;
-            return isW ? '#06b6d4' : '#475569';
+            return isW ? currentFranchise.theme.accentColor : '#475569';
           }}
           class="!bg-slate-900/80 !border-slate-800 !rounded-lg hidden md:block !bottom-4 !right-4"
           maskColor="rgba(2, 6, 23, 0.75)"
@@ -237,7 +299,7 @@
       <div class="w-full h-full flex flex-col items-center justify-center gap-3 text-cyan-400">
         <div class="w-10 h-10 border-4 border-cyan-500/20 border-t-cyan-400 rounded-full animate-spin"></div>
         <p class="text-xs font-mono tracking-widest uppercase text-slate-400">
-          織り成されるマルチバースを構築中...
+          織り成されるタイムラインを構築中...
         </p>
       </div>
     {/if}
@@ -254,4 +316,3 @@
     onToggleWatch={toggleWatch}
   />
 </main>
-

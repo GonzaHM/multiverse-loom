@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "1.0.0",
+  "lastUpdated": "2026-09-13",
+  "universes": [
+    {
+      "id": "canon-skywalker",
+      "name": "スカイウォーカー・サーガ (正史)",
+      "designation": "Skywalker Saga",
+      "color": "#EAB308",
+      "secondaryColor": "#A16207",
+      "franchise": "star-wars",
+      "description": "ルーク、アナキン、レイの三世代にわたるジェダイとシスの宿命を描く本編9部作。"
+    },
+    {
+      "id": "canon-anthology",
+      "name": "アンソロジー (外伝)",
+      "designation": "A Star Wars Story",
+      "color": "#F97316",
+      "secondaryColor": "#C2410C",
+      "franchise": "star-wars",
+      "description": "デス・スター設計図強奪作戦など、名もなき戦士たちの死闘を描くスピンオフ映画。"
+    },
+    {
+      "id": "canon-new-republic",
+      "name": "新共和国・マンダバース",
+      "designation": "The Mandalorian Era",
+      "color": "#06B6D4",
+      "secondaryColor": "#0891B2",
+      "franchise": "star-wars",
+      "description": "帝国の崩壊から新共和国成立期の混乱を生きる賞金稼ぎやジェダイの物語。"
+    },
+    {
+      "id": "canon-animation",
+      "name": "クローン大戦・正史アニメ",
+      "designation": "The Clone Wars",
+      "color": "#3B82F6",
+      "secondaryColor": "#1D4ED8",
+      "franchise": "star-wars",
+      "description": "共和国と独立星系連合の銀河大戦を描き、プリクエルとオリジナルを繋ぐ重要正史。"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "sw-ep1-1999",
+      "title": {
+        "ja": "スター・ウォーズ エピソード1/ファントム・メナス",
+        "en": "Star Wars: Episode I - The Phantom Menace"
+      },
+      "releaseYear": 1999,
+      "releaseDate": "1999-05-19",
+      "type": "movie",
+      "phase": "Prequel Trilogy",
+      "chronologicalOrder": 1,
+      "inUniverseTimeLabel": "32 BBY",
+      "universeId": "canon-skywalker",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/6flWZX8oo4Crh2i3l2hLhF4c91Q.jpg",
+      "summary": "通商連合のナブー封鎖に端を発し、若きオビ＝ワンとクワイ＝ガンがフォースの申し子アナキン・スカイウォーカーと出会う伝説の幕開け。",
+      "watchStatus": false,
+      "characters": ["Qui-Gon Jinn", "Obi-Wan Kenobi", "Anakin Skywalker", "Padmé Amidala", "Darth Maul"],
+      "tags": ["Prequel", "Sith Rise", "Jedi"]
+    },
+    {
+      "id": "sw-clone-wars-2008",
+      "title": {
+        "ja": "スター・ウォーズ: クローン・ウォーズ",
+        "en": "Star Wars: The Clone Wars"
+      },
+      "releaseYear": 2008,
+      "releaseDate": "2008-08-15",
+      "type": "animation",
+      "phase": "The Clone Wars Era",
+      "chronologicalOrder": 2,
+      "inUniverseTimeLabel": "22–19 BBY",
+      "universeId": "canon-animation",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/w1M4pI5U1V3g6t1s5b3n1q8c8f.jpg",
+      "summary": "共和国と分離主義勢力の激化する戦争の中、アナキンの弟子となったアソーカ・タノの成長とジェダイ騎士団の苦悩を描く重要ピース。",
+      "watchStatus": false,
+      "characters": ["Anakin Skywalker", "Ahsoka Tano", "Obi-Wan Kenobi", "Captain Rex"],
+      "tags": ["Clone Wars", "Ahsoka", "Animation Canon"]
+    },
+    {
+      "id": "sw-ep3-2005",
+      "title": {
+        "ja": "スター・ウォーズ エピソード3/シスの復讐",
+        "en": "Star Wars: Episode III - Revenge of the Sith"
+      },
+      "releaseYear": 2005,
+      "releaseDate": "2005-05-19",
+      "type": "movie",
+      "phase": "Prequel Trilogy",
+      "chronologicalOrder": 3,
+      "inUniverseTimeLabel": "19 BBY (オーダー66発動)",
+      "universeId": "canon-skywalker",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/xfSAoB4Qbt3ucPk4QTMv95UKA1o.jpg",
+      "summary": "愛する者を救うため暗黒面に堕ちたアナキンがダース・ベイダーとなり、銀河共和国が崩壊して帝国が誕生する悲劇のクライマックス。",
+      "watchStatus": false,
+      "characters": ["Anakin Skywalker (Darth Vader)", "Obi-Wan Kenobi", "Palpatine", "Padmé Amidala", "Yoda"],
+      "tags": ["Prequel Climax", "Order 66", "Empire Rise"]
+    },
+    {
+      "id": "sw-rogue-one-2016",
+      "title": {
+        "ja": "ローグ・ワン/スター・ウォーズ・ストーリー",
+        "en": "Rogue One: A Star Wars Story"
+      },
+      "releaseYear": 2016,
+      "releaseDate": "2016-12-16",
+      "type": "movie",
+      "phase": "Anthology",
+      "chronologicalOrder": 4,
+      "inUniverseTimeLabel": "0 BBY (EP4の直前)",
+      "universeId": "canon-anthology",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/i0YW1egVNBtPTZFn49527W6up92.jpg",
+      "summary": "銀河を脅かす究極兵器デス・スターの設計図を奪還するため、生還確率ゼロの極秘任務に命を捧げた名もなき反乱軍部隊『ローグ・ワン』の英雄譚。",
+      "watchStatus": false,
+      "characters": ["Jyn Erso", "Cassian Andor", "K-2SO", "Chirrut Îmwe", "Darth Vader"],
+      "tags": ["Death Star", "Rebellion", "Direct Prequel to EP4"]
+    },
+    {
+      "id": "sw-ep4-1977",
+      "title": {
+        "ja": "スター・ウォーズ エピソード4/新たなる希望",
+        "en": "Star Wars: Episode IV - A New Hope"
+      },
+      "releaseYear": 1977,
+      "releaseDate": "1977-05-25",
+      "type": "movie",
+      "phase": "Original Trilogy",
+      "chronologicalOrder": 5,
+      "inUniverseTimeLabel": "0 BBY / ヤヴィンの戦い",
+      "universeId": "canon-skywalker",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg",
+      "summary": "砂漠の惑星で育ったルーク・スカイウォーカーがフォースに目覚め、レイア姫やハン・ソロと共に帝国軍のデス・スター破壊に挑む原点にして不朽の金字塔。",
+      "watchStatus": false,
+      "characters": ["Luke Skywalker", "Princess Leia", "Han Solo", "Darth Vader", "Obi-Wan Kenobi"],
+      "tags": ["Original Trilogy", "Death Star Trench", "A New Hope"]
+    },
+    {
+      "id": "sw-ep5-1980",
+      "title": {
+        "ja": "スター・ウォーズ エピソード5/帝国の逆襲",
+        "en": "Star Wars: Episode V - The Empire Strikes Back"
+      },
+      "releaseYear": 1980,
+      "releaseDate": "1980-05-21",
+      "type": "movie",
+      "phase": "Original Trilogy",
+      "chronologicalOrder": 6,
+      "inUniverseTimeLabel": "3 ABY",
+      "universeId": "canon-skywalker",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/nNAeTmF4CtdSgIOizV8K3x9iqP5.jpg",
+      "summary": "氷の惑星ホスを追われた反乱軍。ルークは惑星ダゴバでヨーダからジェダイの修行を受け、クラウド・シティで父ベイダーとの衝撃の対決を迎える。",
+      "watchStatus": false,
+      "characters": ["Luke Skywalker", "Darth Vader", "Yoda", "Han Solo", "Princess Leia"],
+      "tags": ["Original Trilogy", "I am your father", "Yoda Training"]
+    },
+    {
+      "id": "sw-ep6-1983",
+      "title": {
+        "ja": "スター・ウォーズ エピソード6/ジェダイの帰還",
+        "en": "Star Wars: Episode VI - Return of the Jedi"
+      },
+      "releaseYear": 1983,
+      "releaseDate": "1983-05-25",
+      "type": "movie",
+      "phase": "Original Trilogy",
+      "chronologicalOrder": 7,
+      "inUniverseTimeLabel": "4 ABY (エンドアの戦い)",
+      "universeId": "canon-skywalker",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/xxcnZ0N6t5iVfW55oZ7wG2yX9c.jpg",
+      "summary": "第2デス・スターを巡る総力戦。ルークは父アナキンの良心を信じて皇帝に立ち向かい、銀河帝国を崩壊へと導く旧三部作の完結編。",
+      "watchStatus": false,
+      "characters": ["Luke Skywalker", "Darth Vader (Anakin)", "Emperor Palpatine", "Han Solo", "Princess Leia"],
+      "tags": ["Original Trilogy Climax", "Redemption", "Fall of Empire"]
+    },
+    {
+      "id": "sw-mandalorian-s1-2019",
+      "title": {
+        "ja": "マンダロリアン シーズン1",
+        "en": "The Mandalorian Season 1"
+      },
+      "releaseYear": 2019,
+      "releaseDate": "2019-11-12",
+      "type": "series",
+      "phase": "New Republic Era",
+      "chronologicalOrder": 8,
+      "inUniverseTimeLabel": "9 ABY",
+      "universeId": "canon-new-republic",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/sWgBv7LV2PRoQgkxwlibdGXKz1S.jpg",
+      "summary": "帝国崩壊後の無秩序な辺境宙域で生きる孤高のマンダロリアン戦士が、強大なフォースを秘めた孤児『グローグー』と出会い旅を共にする傑作ドラマ。",
+      "watchStatus": false,
+      "characters": ["Din Djarin (The Mandalorian)", "Grogu (Baby Yoda)", "Greef Karga", "Moff Gideon"],
+      "tags": ["Mandalorian", "Grogu", "New Republic"]
+    },
+    {
+      "id": "sw-ep7-2015",
+      "title": {
+        "ja": "スター・ウォーズ エピソード7/フォースの覚醒",
+        "en": "Star Wars: Episode VII - The Force Awakens"
+      },
+      "releaseYear": 2015,
+      "releaseDate": "2015-12-18",
+      "type": "movie",
+      "phase": "Sequel Trilogy",
+      "chronologicalOrder": 9,
+      "inUniverseTimeLabel": "34 ABY",
+      "universeId": "canon-skywalker",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/wqnLenBqhxHU9mRWQxumZOUyZ1q.jpg",
+      "summary": "帝国の残党『ファースト・オーダー』が台頭する中、フォースの才能を秘めた孤独な少女レイが、伝説のルークを探す戦いに巻き込まれていく。",
+      "watchStatus": false,
+      "characters": ["Rey", "Kylo Ren", "Finn", "Han Solo", "BB-8"],
+      "tags": ["Sequel Trilogy", "Starkiller Base", "Force Awakens"]
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-ep1-clonewars",
+      "source": "sw-ep1-1999",
+      "target": "sw-clone-wars-2008",
+      "relationType": "direct_sequel",
+      "label": "アナキンの成長と銀河大戦勃発",
+      "description": "パダワンとなったアナキンが戦場へ。",
+      "style": {
+        "lineStyle": "solid",
+        "color": "#3B82F6",
+        "animated": false,
+        "width": 2
+      }
+    },
+    {
+      "id": "edge-clonewars-ep3",
+      "source": "sw-clone-wars-2008",
+      "target": "sw-ep3-2005",
+      "relationType": "direct_sequel",
+      "label": "大戦の終結とオーダー66",
+      "description": "アソーカとの別離を経て、アナキンは暗黒面へ。",
+      "style": {
+        "lineStyle": "solid",
+        "color": "#3B82F6",
+        "animated": false,
+        "width": 2.5
+      }
+    },
+    {
+      "id": "edge-ep3-rogueone",
+      "source": "sw-ep3-2005",
+      "target": "sw-rogue-one-2016",
+      "relationType": "direct_sequel",
+      "label": "銀河帝国の暗黒支配と反乱の萌芽",
+      "description": "デス・スター建造が進む中、レジスタンスが結成。",
+      "style": {
+        "lineStyle": "solid",
+        "color": "#F97316",
+        "animated": false,
+        "width": 2
+      }
+    },
+    {
+      "id": "edge-rogueone-ep4",
+      "source": "sw-rogue-one-2016",
+      "target": "sw-ep4-1977",
+      "relationType": "direct_sequel",
+      "label": "直結: 設計図強奪からタンティヴIV逃亡へ",
+      "description": "ローグ・ワンのラストから文字通り数分後の世界へ直接接続。",
+      "style": {
+        "lineStyle": "solid",
+        "color": "#EAB308",
+        "animated": true,
+        "width": 3
+      }
+    },
+    {
+      "id": "edge-ep4-ep5",
+      "source": "sw-ep4-1977",
+      "target": "sw-ep5-1980",
+      "relationType": "direct_sequel",
+      "label": "ヤヴィン勝利と帝国の猛反撃",
+      "description": "デス・スターを失ったベイダーがルークを執拗に追跡。",
+      "style": {
+        "lineStyle": "solid",
+        "color": "#EAB308",
+        "animated": false,
+        "width": 2.5
+      }
+    },
+    {
+      "id": "edge-ep5-ep6",
+      "source": "sw-ep5-1980",
+      "target": "sw-ep6-1983",
+      "relationType": "direct_sequel",
+      "label": "真実の告白と皇帝との決戦",
+      "description": "ルークがジェダイの騎士となり、父を救うための最終決戦へ。",
+      "style": {
+        "lineStyle": "solid",
+        "color": "#EAB308",
+        "animated": false,
+        "width": 3
+      }
+    },
+    {
+      "id": "edge-ep6-mando",
+      "source": "sw-ep6-1983",
+      "target": "sw-mandalorian-s1-2019",
+      "relationType": "direct_sequel",
+      "label": "帝国崩壊後の混沌と新共和国時代",
+      "description": "皇帝亡き銀河のアウター・リムで繰り広げられる新たな冒険。",
+      "style": {
+        "lineStyle": "solid",
+        "color": "#06B6D4",
+        "animated": false,
+        "width": 2
+      }
+    },
+    {
+      "id": "edge-mando-ep7",
+      "source": "sw-mandalorian-s1-2019",
+      "target": "sw-ep7-2015",
+      "relationType": "prerequisite",
+      "label": "帝国の残党とファースト・オーダーの胎動",
+      "description": "クローン研究と残党幹部が将来の脅威へと繋がる予兆。",
+      "style": {
+        "lineStyle": "dotted",
+        "color": "#06B6D4",
+        "animated": false,
+        "width": 1.5
+      }
+    }
+  ]
+}
+

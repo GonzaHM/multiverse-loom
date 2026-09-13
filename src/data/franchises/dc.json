@@ -1,0 +1,297 @@
+{
+  "schemaVersion": "1.0.0",
+  "lastUpdated": "2026-09-13",
+  "universes": [
+    {
+      "id": "dceu",
+      "name": "DCEU (主時間軸)",
+      "designation": "Earth-Prime",
+      "color": "#0284C7",
+      "secondaryColor": "#0369A1",
+      "franchise": "dc",
+      "description": "『マン・オブ・スティール』から始まったDCエクステンデッド・ユニバースのメイン時系列。"
+    },
+    {
+      "id": "earth-89",
+      "name": "Earth-89 (バートン・バース)",
+      "designation": "Earth-89",
+      "color": "#EAB308",
+      "secondaryColor": "#A16207",
+      "franchise": "dc",
+      "description": "ティム・バートン監督、マイケル・キートン主演『バットマン(1989)』の世界。"
+    },
+    {
+      "id": "nolan-verse",
+      "name": "ダークナイト三部作",
+      "designation": "Earth-Nolan",
+      "color": "#64748B",
+      "secondaryColor": "#334155",
+      "franchise": "dc",
+      "description": "クリストファー・ノーラン監督によるリアル志向の伝説的バットマン三部作。"
+    },
+    {
+      "id": "elseworlds",
+      "name": "エルスワールズ (独立世界)",
+      "designation": "Elseworlds",
+      "color": "#8B5CF6",
+      "secondaryColor": "#6D28D9",
+      "franchise": "dc",
+      "description": "主時間軸に縛られない孤高の傑作群（ジョーカー、THE BATMAN）。"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "the-dark-knight-2008",
+      "title": {
+        "ja": "ダークナイト",
+        "en": "The Dark Knight"
+      },
+      "releaseYear": 2008,
+      "releaseDate": "2008-07-18",
+      "type": "movie",
+      "phase": "Dark Knight Trilogy",
+      "chronologicalOrder": 1,
+      "inUniverseTimeLabel": "2008年",
+      "universeId": "nolan-verse",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+      "summary": "ゴッサムの守護者バットマンの前に狂気の犯罪者ジョーカーが現れ、正義と混沌の心理戦が幕を開けるアメコミ映画の最高峰。",
+      "watchStatus": false,
+      "characters": ["Bruce Wayne", "Joker", "Harvey Dent", "James Gordon"],
+      "tags": ["Nolan", "Joker", "Gotham"]
+    },
+    {
+      "id": "man-of-steel-2013",
+      "title": {
+        "ja": "マン・オブ・スティール",
+        "en": "Man of Steel"
+      },
+      "releaseYear": 2013,
+      "releaseDate": "2013-06-14",
+      "type": "movie",
+      "phase": "DCEU Chapter 1",
+      "chronologicalOrder": 10,
+      "inUniverseTimeLabel": "2013年",
+      "universeId": "dceu",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/7rIPjn5TUK04O25ZkMyHrGNPgLx.jpg",
+      "summary": "滅亡したクリプトン星から地球へ送られたカル＝エルが、自身の力と運命に向き合いスーパーマンとして立ち上がるDCEUの原点。",
+      "watchStatus": false,
+      "characters": ["Clark Kent", "Lois Lane", "General Zod", "Martha Kent"],
+      "tags": ["DCEU", "Superman", "Snyderverse"]
+    },
+    {
+      "id": "batman-v-superman-2016",
+      "title": {
+        "ja": "バットマン vs スーパーマン ジャスティスの誕生",
+        "en": "Batman v Superman: Dawn of Justice"
+      },
+      "releaseYear": 2016,
+      "releaseDate": "2016-03-25",
+      "type": "movie",
+      "phase": "DCEU Chapter 1",
+      "chronologicalOrder": 12,
+      "inUniverseTimeLabel": "2015年",
+      "universeId": "dceu",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/5UsK3grJvtQrtzEgqNlDljJW96w.jpg",
+      "summary": "メトロポリス崩壊を目撃したバットマンが神のごとき超人を危険視し激突。ワンダーウーマンの登場とともにジャスティス・リーグ結成への布石が打たれる。",
+      "watchStatus": false,
+      "characters": ["Bruce Wayne", "Clark Kent", "Diana Prince", "Lex Luthor"],
+      "tags": ["DCEU", "Trinity", "Dawn of Justice"]
+    },
+    {
+      "id": "wonder-woman-2017",
+      "title": {
+        "ja": "ワンダーウーマン",
+        "en": "Wonder Woman"
+      },
+      "releaseYear": 2017,
+      "releaseDate": "2017-06-02",
+      "type": "movie",
+      "phase": "DCEU Chapter 1",
+      "chronologicalOrder": 5,
+      "inUniverseTimeLabel": "1918年 (第1次世界大戦)",
+      "universeId": "dceu",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/imekS7f1OuHyUP2LAiTEM0zFvI8.jpg",
+      "summary": "女性だけの孤島セミッシラで育ったプリンセス・ダイアナが、人間界の戦争を終わらせるため旅立つオリジンストーリー。",
+      "watchStatus": false,
+      "characters": ["Diana Prince", "Steve Trevor", "Ares", "Hippolyta"],
+      "tags": ["DCEU", "Wonder Woman", "World War I"]
+    },
+    {
+      "id": "zack-snyders-justice-league-2021",
+      "title": {
+        "ja": "ジャスティス・リーグ: ザック・スナイダーカット",
+        "en": "Zack Snyder's Justice League"
+      },
+      "releaseYear": 2021,
+      "releaseDate": "2021-03-18",
+      "type": "movie",
+      "phase": "DCEU Chapter 1",
+      "chronologicalOrder": 15,
+      "inUniverseTimeLabel": "2017年",
+      "universeId": "dceu",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/tnAuB8q5vv7Ax9UAEje5Xi4BXik.jpg",
+      "summary": "スーパーマン亡き世界を守るため、バットマンとワンダーウーマンがメタヒューマンを集め結成したジャスティス・リーグの真の姿を描く4時間の巨編。",
+      "watchStatus": false,
+      "characters": ["Bruce Wayne", "Clark Kent", "Diana Prince", "Barry Allen", "Arthur Curry", "Victor Stone"],
+      "tags": ["DCEU", "Justice League", "Snyder Cut"]
+    },
+    {
+      "id": "joker-2019",
+      "title": {
+        "ja": "ジョーカー",
+        "en": "Joker"
+      },
+      "releaseYear": 2019,
+      "releaseDate": "2019-10-04",
+      "type": "movie",
+      "phase": "Elseworlds",
+      "chronologicalOrder": 3,
+      "inUniverseTimeLabel": "1981年 (Elseworlds)",
+      "universeId": "elseworlds",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
+      "summary": "心優しい大道芸人アーサー・フレックが、格差と冷酷な社会に追い詰められ狂気のカリスマ『ジョーカー』へと変貌を遂げる衝撃作。",
+      "watchStatus": false,
+      "characters": ["Arthur Fleck (Joker)", "Murray Franklin", "Sophie Dumond"],
+      "tags": ["Elseworlds", "Joker", "Gotham Noir"]
+    },
+    {
+      "id": "the-batman-2022",
+      "title": {
+        "ja": "THE BATMAN -ザ・バットマン-",
+        "en": "The Batman"
+      },
+      "releaseYear": 2022,
+      "releaseDate": "2022-03-04",
+      "type": "movie",
+      "phase": "Elseworlds",
+      "chronologicalOrder": 25,
+      "inUniverseTimeLabel": "活動2年目 (Elseworlds)",
+      "universeId": "elseworlds",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg",
+      "summary": "活動2年目の若きブルース・ウェインが、ゴッサムの腐敗を暴く知能犯リドラーの連続殺人に挑むハードボイルド探偵劇。",
+      "watchStatus": false,
+      "characters": ["Bruce Wayne", "Selina Kyle", "Edward Nashton (Riddler)", "Oswald Cobblepot"],
+      "tags": ["Elseworlds", "Detective", "Reeves-verse"]
+    },
+    {
+      "id": "the-flash-2023",
+      "title": {
+        "ja": "ザ・フラッシュ",
+        "en": "The Flash"
+      },
+      "releaseYear": 2023,
+      "releaseDate": "2023-06-16",
+      "type": "movie",
+      "phase": "DCEU Multiverse Climax",
+      "chronologicalOrder": 30,
+      "inUniverseTimeLabel": "2023年 (時間逆行・マルチバース衝突)",
+      "universeId": "dceu",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/3m1N2w41iU4w1n68b5ZlKz9h2K9.jpg",
+      "summary": "母を救うため過去へ疾走したバリー・アレンが時間軸を崩壊させ、キートン版バットマンや別バースのスーパーガールが存在する歪んだ世界へ漂着する。",
+      "watchStatus": false,
+      "characters": ["Barry Allen", "Bruce Wayne (DCEU)", "Bruce Wayne (Earth-89)", "Kara Zor-El"],
+      "tags": ["DCEU", "Flashpoint", "Multiverse Collision", "Keaton Batman"]
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge-mos-bvs",
+      "source": "man-of-steel-2013",
+      "target": "batman-v-superman-2016",
+      "relationType": "direct_sequel",
+      "label": "メトロポリス崩壊の余波と激突",
+      "description": "ゾッド将軍戦の被害を受けたブルースがスーパーマンを危険視。",
+      "style": {
+        "lineStyle": "solid",
+        "color": "#0284C7",
+        "animated": false,
+        "width": 2.5
+      }
+    },
+    {
+      "id": "edge-ww-bvs",
+      "source": "wonder-woman-2017",
+      "target": "batman-v-superman-2016",
+      "relationType": "prerequisite",
+      "label": "100年の沈黙を破り共闘へ",
+      "description": "WWIを戦ったダイアナがドゥームズデイ戦でバットマンたちと合流。",
+      "style": {
+        "lineStyle": "dotted",
+        "color": "#0284C7",
+        "animated": false,
+        "width": 1.5
+      }
+    },
+    {
+      "id": "edge-bvs-zsjl",
+      "source": "batman-v-superman-2016",
+      "target": "zack-snyders-justice-league-2021",
+      "relationType": "direct_sequel",
+      "label": "スーパーマンの死とリーグ結成",
+      "description": "ステッペンウルフの襲来に対抗するためヒーローが集結。",
+      "style": {
+        "lineStyle": "solid",
+        "color": "#0284C7",
+        "animated": false,
+        "width": 3
+      }
+    },
+    {
+      "id": "edge-zsjl-flash",
+      "source": "zack-snyders-justice-league-2021",
+      "target": "the-flash-2023",
+      "relationType": "direct_sequel",
+      "label": "スピードフォース開花と過去改変",
+      "description": "時間を超える力を手に入れたバリーが母を救うため禁断の過去改変へ。",
+      "style": {
+        "lineStyle": "solid",
+        "color": "#0284C7",
+        "animated": false,
+        "width": 2.5
+      }
+    },
+    {
+      "id": "edge-flash-keaton",
+      "source": "the-flash-2023",
+      "target": "the-flash-2023",
+      "relationType": "crossover",
+      "label": "Earth-89 (キートン版バットマン) 召喚",
+      "description": "スパゲッティ効果により時間軸が交差し、1989年版バットマンの世界と融合。",
+      "style": {
+        "lineStyle": "dashed",
+        "color": "#EAB308",
+        "animated": true,
+        "width": 2.5
+      }
+    },
+    {
+      "id": "edge-darkknight-joker",
+      "source": "the-dark-knight-2008",
+      "target": "joker-2019",
+      "relationType": "prerequisite",
+      "label": "ゴッサムの狂気とジョーカー像の変遷",
+      "description": "ヒース・レジャーとホアキン・フェニックスの二大怪演の比較履修。",
+      "style": {
+        "lineStyle": "dotted",
+        "color": "#8B5CF6",
+        "animated": false,
+        "width": 1.5
+      }
+    },
+    {
+      "id": "edge-darkknight-thebatman",
+      "source": "the-dark-knight-2008",
+      "target": "the-batman-2022",
+      "relationType": "prerequisite",
+      "label": "探偵バットマンの系譜",
+      "description": "クライムサスペンス路線の深化。",
+      "style": {
+        "lineStyle": "dotted",
+        "color": "#64748B",
+        "animated": false,
+        "width": 1.5
+      }
+    }
+  ]
+}
+
