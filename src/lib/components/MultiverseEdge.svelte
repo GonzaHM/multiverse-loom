@@ -124,3 +124,4 @@
     <animateMotion dur={isTimeTravel ? '2.5s' : '3.5s'} repeatCount="indefinite" path={edgePath} />
   </circle>
 {/if}
+

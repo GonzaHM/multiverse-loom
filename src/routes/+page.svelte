@@ -19,6 +19,7 @@
   import MultiverseEdge from '$lib/components/MultiverseEdge.svelte';
   import EventDetailModal from '$lib/components/EventDetailModal.svelte';
   import TimelineToolbar from '$lib/components/TimelineToolbar.svelte';
+  import TimeAxis from '$lib/components/TimeAxis.svelte';
   import { getLayoutedTimeline } from '$lib/layout/dagre-layout';
   import { exportTimelineAsPng } from '$lib/utils/export-image';
 
@@ -338,6 +339,9 @@
 
   <!-- グラフキャンバスエリア（出来事ノードが時系列で流れる） -->
   <div class="w-full h-full pt-14 pb-0 relative overflow-hidden touch-none">
+    <!-- 画面上下の中心に配置される水平時間軸（Time Axis） -->
+    <TimeAxis franchiseColor={currentFranchise.theme.accentColor} />
+
     {#if browser && isReady}
       <SvelteFlow
         bind:nodes={flowNodes}
