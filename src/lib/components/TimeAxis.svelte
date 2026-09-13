@@ -1,52 +1,283 @@
 <script lang="ts">
-  let { franchiseColor = '#06b6d4' } = $props<{
+  import {
+    DEFAULT_START_YEAR,
+    DEFAULT_END_YEAR,
+    DEFAULT_YEAR_SCALE,
+    getYearX
+  } from '../layout/chronological-layout';
+
+  let {
+    franchiseColor = '#06b6d4',
+    startYear = DEFAULT_START_YEAR,
+    endYear = DEFAULT_END_YEAR,
+    yearScale = DEFAULT_YEAR_SCALE,
+    nullTimeX = (DEFAULT_END_YEAR - DEFAULT_START_YEAR + 4) * DEFAULT_YEAR_SCALE
+  } = $props<{
     franchiseColor?: string;
+    startYear?: number;
+    endYear?: number;
+    yearScale?: number;
+    nullTimeX?: number;
   }>();
+
+  // 10年刻みの主目盛り（Major Ticks）
+  const majorYears = $derived.by(() => {
+    const list: number[] = [];
+    const firstDecade = Math.ceil(startYear / 10) * 10;
+    for (let y = firstDecade; y <= endYear; y += 10) {
+      list.push(y);
+    }
+    return list;
+  });
+
+  // 5年刻みの副目盛り（Minor Ticks: 10年の倍数を除く）
+  const minorYears = $derived.by(() => {
+    const list: number[] = [];
+    const firstFive = Math.ceil(startYear / 5) * 5;
+    for (let y = firstFive; y <= endYear; y += 5) {
+      if (y % 10 !== 0) {
+        list.push(y);
+      }
+    }
+    return list;
+  });
+
+  // キーマイルストーン年（MCUで重要な年）
+  const keyYears = [
+    { year: 1942, label: '1942 (大戦 & キューブ)' },
+    { year: 1970, label: '1970 (キャンプ・レハイ)' },
+    { year: 2012, label: '2012 (NY決戦 & 分岐)' },
+    { year: 2023, label: '2023 (指パッチン)' },
+    { year: 2024, label: '2024 (三世代集結)' }
+  ];
+
+  const minX = $derived(getYearX(startYear, startYear, yearScale, endYear) - 250);
+  const maxX = $derived(nullTimeX + 450);
+  const totalWidth = $derived(maxX - minX);
 </script>
 
-<!-- 画面上下の中心に配置される水平時間軸（Time Axis） -->
-<div class="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 z-10 select-none flex flex-col items-center justify-center">
-  <!-- 背景の薄いグラデーション光彩ゾーン -->
-  <div
-    class="absolute inset-x-0 h-16 bg-gradient-to-b from-transparent via-cyan-950/10 to-transparent pointer-events-none"
-    style="--axis-color: {franchiseColor};"
-  ></div>
+<!-- Svelte Flow ビューポート内（ワールド座標系）に展開される水平時間軸 -->
+<div class="pointer-events-none select-none absolute inset-0 overflow-visible z-0">
+  <svg
+    class="overflow-visible"
+    style="position: absolute; left: 0; top: 0; width: 1px; height: 1px;"
+  >
+    <defs>
+      <!-- 水平ラインのネオングローフィルター -->
+      <filter id="axis-glow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="3" result="blur" />
+        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+      </filter>
 
-  <!-- 水平ライン本体（両端フェードアウト・中央ネオン発光） -->
-  <div class="relative w-full flex items-center">
-    <!-- 左側ライン（フェードイン） -->
-    <div class="flex-1 h-[2px] bg-gradient-to-r from-transparent via-cyan-500/40 to-cyan-400/70 shadow-[0_0_8px_rgba(6,182,212,0.4)]"></div>
+      <!-- 時間の外側ゾーンのグラデーション -->
+      <linearGradient id="tva-zone-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.03" />
+        <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.15" />
+      </linearGradient>
 
-    <!-- 中央のインジケーターバッジ -->
-    <div class="shrink-0 mx-3 px-3 py-1 rounded-full bg-slate-950/90 border border-cyan-500/50 backdrop-blur-md shadow-lg shadow-cyan-500/20 flex items-center gap-2">
-      <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-      <span class="text-[10px] font-mono font-bold tracking-widest uppercase text-cyan-300">
-        TIME AXIS ── 時間軸
-      </span>
-      <span class="text-[9px] font-mono text-slate-400 hidden sm:inline">
-        ( 過去 ──► 未来 )
-      </span>
-    </div>
+      <!-- タイムライン水平ビームのグラデーション -->
+      <linearGradient id="timeline-beam" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.1" />
+        <stop offset="10%" stop-color="#06b6d4" stop-opacity="0.8" />
+        <stop offset="85%" stop-color="#06b6d4" stop-opacity="0.9" />
+        <stop offset="95%" stop-color="#f59e0b" stop-opacity="0.9" />
+        <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.2" />
+      </linearGradient>
+    </defs>
 
-    <!-- 右側ライン（フェードアウト） -->
-    <div class="flex-1 h-[2px] bg-gradient-to-r from-cyan-400/70 via-cyan-500/40 to-transparent shadow-[0_0_8px_rgba(6,182,212,0.4)]"></div>
-  </div>
+    <!-- 時間の外側（TVA / Null-Time）の領域ハイライト背景 -->
+    <rect
+      x={nullTimeX - 80}
+      y="-420"
+      width="500"
+      height="840"
+      fill="url(#tva-zone-grad)"
+      rx="16"
+      stroke="#f59e0b"
+      stroke-width="1"
+      stroke-opacity="0.25"
+      stroke-dasharray="6,6"
+    />
 
-  <!-- 時間軸の目盛り（HUD調の等間隔目盛り） -->
-  <div class="w-full flex justify-between px-8 sm:px-16 mt-1 text-[9px] font-mono text-slate-400/80">
-    <div class="flex items-center gap-1">
-      <span class="text-slate-400">◀ 過去 (PAST)</span>
-      <span class="text-slate-500 hidden md:inline">| 1940s</span>
-    </div>
-    <div class="hidden sm:flex items-center gap-6 text-slate-500/70">
-      <span>1970s</span>
-      <span>2000s</span>
-      <span>2012 (NY)</span>
-      <span>2023 (Endgame)</span>
-    </div>
-    <div class="flex items-center gap-1">
-      <span class="text-slate-500 hidden md:inline">2024+ |</span>
-      <span class="text-cyan-400 font-semibold">未来・多元宇宙 (FUTURE) ▶</span>
-    </div>
-  </div>
+    <!-- 背景の縦グリッド破線（10年ごとの主目盛りから上下に貫通） -->
+    {#each majorYears as year}
+      {@const x = getYearX(year, startYear, yearScale, endYear)}
+      <line
+        x1={x}
+        y1="-420"
+        x2={x}
+        y2="420"
+        stroke="#334155"
+        stroke-width="1"
+        stroke-dasharray="4,6"
+        stroke-opacity="0.45"
+      />
+    {/each}
+
+    <!-- 背景の縦グリッド破線（5年ごとの副目盛り） -->
+    {#each minorYears as year}
+      {@const x = getYearX(year, startYear, yearScale, endYear)}
+      <line
+        x1={x}
+        y1="-300"
+        x2={x}
+        y2="300"
+        stroke="#1e293b"
+        stroke-width="1"
+        stroke-dasharray="2,6"
+        stroke-opacity="0.3"
+      />
+    {/each}
+
+    <!-- メイン水平軸（Y = 0）のバックグロー -->
+    <line
+      x1={minX}
+      y1="0"
+      x2={maxX}
+      y2="0"
+      stroke="#06b6d4"
+      stroke-width="6"
+      stroke-opacity="0.2"
+      filter="url(#axis-glow)"
+    />
+
+    <!-- メイン水平軸（Y = 0）の実線ライン -->
+    <line
+      x1={minX}
+      y1="0"
+      x2={maxX}
+      y2="0"
+      stroke="url(#timeline-beam)"
+      stroke-width="2.5"
+    />
+
+    <!-- 10年刻みの主目盛り（Ticks） & 西暦ラベル -->
+    {#each majorYears as year}
+      {@const x = getYearX(year, startYear, yearScale, endYear)}
+      <!-- 上下目盛り線 -->
+      <line
+        x1={x}
+        y1="-16"
+        x2={x}
+        y2="16"
+        stroke="#22d3ee"
+        stroke-width="2"
+      />
+      <!-- 中央のドット -->
+      <circle cx={x} cy="0" r="3" fill="#0891b2" stroke="#22d3ee" stroke-width="1" />
+      <!-- 西暦ラベル（下側） -->
+      <text
+        x={x}
+        y="36"
+        text-anchor="middle"
+        fill="#a5f3fc"
+        font-family="monospace"
+        font-size="13"
+        font-weight="bold"
+        letter-spacing="1px"
+      >
+        {year}
+      </text>
+    {/each}
+
+    <!-- 5年刻みの副目盛り（Ticks） & 西暦ラベル -->
+    {#each minorYears as year}
+      {@const x = getYearX(year, startYear, yearScale, endYear)}
+      <!-- 上下目盛り線 -->
+      <line
+        x1={x}
+        y1="-9"
+        x2={x}
+        y2="9"
+        stroke="#64748b"
+        stroke-width="1.5"
+      />
+      <!-- 小さな西暦ラベル -->
+      <text
+        x={x}
+        y="28"
+        text-anchor="middle"
+        fill="#64748b"
+        font-family="monospace"
+        font-size="10"
+      >
+        {year}
+      </text>
+    {/each}
+
+    <!-- MCUキー年代のアクセントマーカー -->
+    {#each keyYears as item}
+      {@const x = getYearX(item.year, startYear, yearScale, endYear)}
+      <!-- 小さなハイライトドット -->
+      <circle
+        cx={x}
+        cy="0"
+        r="4.5"
+        fill="#f43f5e"
+        stroke="#ffffff"
+        stroke-width="1.5"
+      />
+      <text
+        x={x}
+        y="-12"
+        text-anchor="middle"
+        fill="#fda4af"
+        font-family="monospace"
+        font-size="9"
+        font-weight="bold"
+      >
+        {item.year}
+      </text>
+    {/each}
+
+    <!-- 時間の外側 (End of Time) 特別マーカー -->
+    <g transform="translate({nullTimeX}, 0)">
+      <!-- 垂直境界線 -->
+      <line
+        x1="0"
+        y1="-400"
+        x2="0"
+        y2="400"
+        stroke="#f59e0b"
+        stroke-width="2"
+        stroke-dasharray="6,4"
+        stroke-opacity="0.8"
+      />
+      <circle cx="0" cy="0" r="6" fill="#f59e0b" stroke="#ffffff" stroke-width="2" />
+
+      <!-- バッジテキスト -->
+      <text
+        x="18"
+        y="5"
+        fill="#fcd34d"
+        font-family="monospace"
+        font-size="12"
+        font-weight="bold"
+        letter-spacing="1px"
+      >
+        ⚡ TVA / 時間の外側 (NULL-TIME)
+      </text>
+      <text
+        x="18"
+        y="22"
+        fill="#d97706"
+        font-family="sans-serif"
+        font-size="9"
+      >
+        時の終わりの城・神聖時間軸解放
+      </text>
+    </g>
+
+    <!-- タイムラインの始点・終点アノテーション -->
+    <text
+      x={minX + 60}
+      y="-14"
+      fill="#64748b"
+      font-family="monospace"
+      font-size="11"
+      letter-spacing="1.5px"
+    >
+      ◀ 過去 (PAST: 1940s)
+    </text>
+  </svg>
 </div>

@@ -7,6 +7,7 @@
     Background,
     BackgroundVariant,
     MiniMap,
+    ViewportPortal,
     type Node,
     type Edge,
     type NodeTypes,
@@ -20,7 +21,13 @@
   import EventDetailModal from '$lib/components/EventDetailModal.svelte';
   import TimelineToolbar from '$lib/components/TimelineToolbar.svelte';
   import TimeAxis from '$lib/components/TimeAxis.svelte';
-  import { getLayoutedTimeline } from '$lib/layout/dagre-layout';
+  import {
+    getChronologicalLayout,
+    DEFAULT_START_YEAR,
+    DEFAULT_END_YEAR,
+    DEFAULT_YEAR_SCALE,
+    type LayoutResult
+  } from '$lib/layout/chronological-layout';
   import { exportTimelineAsPng } from '$lib/utils/export-image';
 
   // カスタムノード & エッジ登録
@@ -54,6 +61,12 @@
   // Svelte Flow 用ノード・エッジ
   let flowNodes = $state<Node[]>([]);
   let flowEdges = $state<Edge[]>([]);
+  let timelineBounds = $state({
+    startYear: DEFAULT_START_YEAR,
+    endYear: DEFAULT_END_YEAR,
+    yearScale: DEFAULT_YEAR_SCALE,
+    nullTimeX: (DEFAULT_END_YEAR - DEFAULT_START_YEAR + 4) * DEFAULT_YEAR_SCALE
+  });
   let isReady = $state(false);
 
   // 集計
@@ -249,14 +262,17 @@
         };
       });
 
-    // 3. Dagreレイアウト計算（出来事ノードを直接整列）
-    const layout = getLayoutedTimeline(rawNodes, rawEdges, {
-      direction: 'LR',
-      collapsedWidth: 250,
-      collapsedHeight: 115
+    // 3. 西暦の目盛りに忠実なタイムラインレイアウト計算
+    const layout = getChronologicalLayout(rawNodes, rawEdges, {
+      startYear: DEFAULT_START_YEAR,
+      endYear: DEFAULT_END_YEAR,
+      yearScale: DEFAULT_YEAR_SCALE,
+      nodeWidth: 250,
+      nodeHeight: 115
     });
     flowNodes = layout.nodes;
     flowEdges = layout.edges;
+    timelineBounds = layout.timelineBounds;
   }
 
   // シリーズ切り替え
@@ -339,8 +355,14 @@
 
   <!-- グラフキャンバスエリア（出来事ノードが時系列で流れる） -->
   <div class="w-full h-full pt-14 pb-0 relative overflow-hidden touch-none">
-    <!-- 画面上下の中心に配置される水平時間軸（Time Axis） -->
-    <TimeAxis franchiseColor={currentFranchise.theme.accentColor} />
+    <!-- タイムライン案内バッジ（画面上部中央） -->
+    <div class="pointer-events-none absolute top-16 inset-x-0 z-10 flex justify-center">
+      <div class="px-3 py-1 rounded-full bg-slate-900/80 border border-cyan-500/30 backdrop-blur-md shadow-lg shadow-cyan-950/40 flex items-center gap-2 text-[10px] font-mono text-cyan-300">
+        <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+        <span class="tracking-widest uppercase font-semibold">CHRONOLOGICAL TIMELINE</span>
+        <span class="text-slate-400 hidden sm:inline">| 西暦目盛り連動モード (1940年 ➔ 未来)</span>
+      </div>
+    </div>
 
     {#if browser && isReady}
       <SvelteFlow
@@ -349,14 +371,24 @@
         {nodeTypes}
         {edgeTypes}
         fitView
-        fitViewOptions={{ padding: 0.2 }}
-        minZoom={0.2}
+        fitViewOptions={{ padding: 0.15 }}
+        minZoom={0.15}
         maxZoom={1.8}
         panOnDrag={true}
         zoomOnPinch={true}
         panOnScroll={false}
         preventScrolling={true}
       >
+        <!-- キャンバス内部（ワールド座標系）に配置される水平時間軸 & 西暦目盛り -->
+        <ViewportPortal target="back">
+          <TimeAxis
+            franchiseColor={currentFranchise.theme.accentColor}
+            startYear={timelineBounds.startYear}
+            endYear={timelineBounds.endYear}
+            yearScale={timelineBounds.yearScale}
+            nullTimeX={timelineBounds.nullTimeX}
+          />
+        </ViewportPortal>
         <!-- 背景の宇宙ドットグリッド -->
         <Background
           variant={BackgroundVariant.Dots}
