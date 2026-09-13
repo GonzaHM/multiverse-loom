@@ -162,12 +162,15 @@ export function getChronologicalLayout(
           const ySlots = [-180, -60, 140];
           targetY = ySlots[index] ?? 0;
           xOffset = index * 35;
-        } else {
-          // 4つ以上（例: 2012年）
-          // 上部分岐レーン (-310, -180), 正史レーン (-60), 別次元レーン (+150)
-          const ySlots = [-310, -180, -60, 160];
+        } else if (count === 4) {
+          const ySlots = [-260, -130, 80, 220];
           targetY = ySlots[index] ?? (index - count / 2) * 140;
-          xOffset = index * 40;
+          xOffset = index * 35;
+        } else {
+          // 5つ以上（例: 2012年）
+          const ySlots = [-330, -190, -60, 80, 220];
+          targetY = ySlots[index] ?? (index - count / 2) * 130;
+          xOffset = index * 30;
         }
       }
 

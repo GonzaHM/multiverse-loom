@@ -58,7 +58,67 @@
       "type": "infinity_stone",
       "color": "#06B6D4",
       "description": "空間を自在に跳躍するインフィニティ・ストーン。第二次大戦からエンドゲームのタイム泥棒、ロキの分岐へと数奇な運命を辿る。",
-      "aliases": ["Tesseract", "Cosmic Cube", "Space Stone"]
+      "aliases": [
+        "Tesseract",
+        "Cosmic Cube",
+        "Space Stone"
+      ]
+    },
+    {
+      "id": "mind-stone-scepter",
+      "name": {
+        "ja": "セプター / マインド・ストーン",
+        "en": "Scepter / Mind Stone"
+      },
+      "type": "infinity_stone",
+      "color": "#FBBF24",
+      "description": "精神を操る黄色のインフィニティ・ストーン。ロキの杖からヴィジョンの額へ、そしてサノスへ。",
+      "aliases": [
+        "Chitauri Scepter",
+        "Mind Stone"
+      ]
+    },
+    {
+      "id": "aether-reality-stone",
+      "name": {
+        "ja": "エーテル / リアリティ・ストーン",
+        "en": "Aether / Reality Stone"
+      },
+      "type": "infinity_stone",
+      "color": "#EF4444",
+      "description": "現実を歪める赤色の液体状ストーン。ダークエルフの古代兵器からノーウェアのコレクターへ。",
+      "aliases": [
+        "Aether",
+        "Reality Stone"
+      ]
+    },
+    {
+      "id": "orb-power-stone",
+      "name": {
+        "ja": "オーブ / パワー・ストーン",
+        "en": "Orb / Power Stone"
+      },
+      "type": "infinity_stone",
+      "color": "#A855F7",
+      "description": "惑星を一撃で滅ぼす紫色のストーン。モラグからザンダー星のノバ軍警察へ。",
+      "aliases": [
+        "Orb",
+        "Power Stone"
+      ]
+    },
+    {
+      "id": "eye-of-agamotto-time-stone",
+      "name": {
+        "ja": "アガモットの目 / タイム・ストーン",
+        "en": "Eye of Agamotto / Time Stone"
+      },
+      "type": "infinity_stone",
+      "color": "#10B981",
+      "description": "時間を操る緑色のストーン。至高の魔術師エンシェント・ワンからドクター・ストレンジへ。",
+      "aliases": [
+        "Eye of Agamotto",
+        "Time Stone"
+      ]
     }
   ],
   "nodes": [
@@ -78,32 +138,108 @@
       "posterUrl": "https://image.tmdb.org/t/p/w500/vSNxAJTlD0r02V9sPYFSpLvgVGG.jpg",
       "summary": "第二次大戦中、極秘実験で超人兵士となったスティーブ・ロジャースが、四次元キューブを狙うヒドラのレッドスカルに立ち向かうMCU史の原点。",
       "watchStatus": false,
-      "characters": ["Steve Rogers", "Peggy Carter", "Bucky Barnes", "Red Skull"],
-      "tags": ["Infinity Saga", "Phase 1", "Super Soldier", "Tesseract"],
+      "characters": [
+        "Steve Rogers",
+        "Peggy Carter",
+        "Bucky Barnes",
+        "Red Skull"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 1",
+        "Super Soldier",
+        "Tesseract"
+      ],
       "events": [
         {
           "id": "evt-1942-tonsberg-tesseract",
           "movieId": "captain-america-the-first-avenger-2011",
-          "title": { "ja": "トンスベルグでキューブ奪取", "en": "Tesseract Seized in Tønsberg" },
+          "title": {
+            "ja": "トンスベルグでキューブ奪取",
+            "en": "Tesseract Seized in Tønsberg"
+          },
           "inUniverseYear": 1942,
-          "inUniverseDateLabel": "1942年",
+          "inUniverseDateLabel": "1942年3月",
           "summary": "レッドスカルが教会の壁画から四次元キューブを発掘しヒドラの兵器開発を開始。",
           "order": 1,
           "eventType": "canon_milestone",
-          "keyArtifacts": ["tesseract-space-stone"],
-          "keyCharacters": ["Red Skull"]
+          "keyArtifacts": [
+            "tesseract-space-stone"
+          ],
+          "keyCharacters": [
+            "Red Skull"
+          ]
         },
         {
           "id": "evt-1945-valkyrie-crash",
           "movieId": "captain-america-the-first-avenger-2011",
-          "title": { "ja": "ワルキューレ墜落 & キューブ海没", "en": "Valkyrie Crash & Tesseract Sinks" },
+          "title": {
+            "ja": "ワルキューレ墜落 & キューブ海没",
+            "en": "Valkyrie Crash & Tesseract Sinks"
+          },
           "inUniverseYear": 1945,
-          "inUniverseDateLabel": "1945年",
+          "inUniverseDateLabel": "1945年3月",
           "summary": "スティーブが機体ごと北極の氷原に墜落。キューブは海没しハワード・スタークが回収。",
           "order": 2,
           "eventType": "canon_milestone",
-          "keyArtifacts": ["tesseract-space-stone"],
-          "keyCharacters": ["Steve Rogers", "Howard Stark"]
+          "keyArtifacts": [
+            "tesseract-space-stone"
+          ],
+          "keyCharacters": [
+            "Steve Rogers",
+            "Howard Stark"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "captain-marvel-2019",
+      "title": {
+        "ja": "キャプテン・マーベル",
+        "en": "Captain Marvel"
+      },
+      "releaseYear": 2019,
+      "releaseDate": "2019-03-08",
+      "type": "movie",
+      "phase": 3,
+      "chronologicalOrder": 2,
+      "inUniverseTimeLabel": "1995",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/AtsgWhDnHTq68L0lLsUrCnM7TDC.jpg",
+      "summary": "記憶を失った元空軍パイロットのキャロル・ダンヴァースが、四次元キューブのエネルギーを宿してバイナリ覚醒。アベンジャーズ誕生のきっかけとなる。",
+      "watchStatus": false,
+      "characters": [
+        "Carol Danvers",
+        "Nick Fury",
+        "Talos",
+        "Goose"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 3",
+        "Kree-Skrull",
+        "Tesseract"
+      ],
+      "events": [
+        {
+          "id": "evt-1995-captain-marvel-awakens",
+          "movieId": "captain-marvel-2019",
+          "title": {
+            "ja": "キャロル覚醒 & 緊急ポケベル預託",
+            "en": "Carol Awakens & Transmits Pager"
+          },
+          "inUniverseYear": 1995,
+          "inUniverseDateLabel": "1995年6月",
+          "summary": "キューブのエネルギーで覚醒したキャロルがスクラルを先導し宇宙へ。フューリーに緊急通信ポケベルを託す。",
+          "order": 1,
+          "eventType": "canon_milestone",
+          "keyArtifacts": [
+            "tesseract-space-stone"
+          ],
+          "keyCharacters": [
+            "Carol Danvers",
+            "Nick Fury"
+          ]
         }
       ]
     },
@@ -121,21 +257,180 @@
       "inUniverseTimeLabel": "2010",
       "universeId": "earth-616",
       "posterUrl": "https://image.tmdb.org/t/p/w500/78lPtwv72eTNqFW9COBYI0dWDJa.jpg",
-      "summary": "天才兵器開発者トニー・スタークが拉致事件を契機にパワードスーツを開発。「アベンジャーズ計画」へと繋がる記念すべきMCU第1作。",
+      "summary": "巨大軍需企業の社長トニー・スタークが拉致事件を機にパワードスーツを開発。自らヒーローであることを公表しMCUの歴史が開幕。",
       "watchStatus": false,
-      "characters": ["Tony Stark", "Pepper Potts", "James Rhodes", "Nick Fury"],
-      "tags": ["Infinity Saga", "Phase 1", "Avenger Initiative"],
+      "characters": [
+        "Tony Stark",
+        "Pepper Potts",
+        "James Rhodes",
+        "Obadiah Stane"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 1",
+        "Iron Man",
+        "Origins"
+      ],
       "events": [
         {
           "id": "evt-2010-i-am-iron-man",
           "movieId": "iron-man-2008",
-          "title": { "ja": "「私がアイアンマンだ」宣言", "en": "I am Iron Man Declaration" },
+          "title": {
+            "ja": "「私がアイアンマンだ」宣言",
+            "en": "I am Iron Man Press Conference"
+          },
           "inUniverseYear": 2010,
-          "inUniverseDateLabel": "2010年",
-          "summary": "トニー・スタークが記者会見で正体を公表。フューリーがアベンジャーズ計画を提案。",
+          "inUniverseDateLabel": "2010年5月",
+          "summary": "トニーが記者会見で自らがアイアンマンであることを告白。フューリーがアベンジャーズ計画を打診。",
           "order": 1,
           "eventType": "canon_milestone",
-          "keyCharacters": ["Tony Stark", "Nick Fury"]
+          "keyCharacters": [
+            "Tony Stark",
+            "Nick Fury"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "iron-man-2-2010",
+      "title": {
+        "ja": "アイアンマン2",
+        "en": "Iron Man 2"
+      },
+      "releaseYear": 2010,
+      "releaseDate": "2010-05-07",
+      "type": "movie",
+      "phase": 1,
+      "chronologicalOrder": 4,
+      "inUniverseTimeLabel": "2011",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/6WBeq4JfCvvManmrueBm6Wo208v.jpg",
+      "summary": "パラジウム中毒に苦しむトニーが、父ハワードの遺した設計図から新元素を生成し新型アークリアクターを完成させる。",
+      "watchStatus": false,
+      "characters": [
+        "Tony Stark",
+        "Natasha Romanoff",
+        "James Rhodes",
+        "Ivan Vanko"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 1",
+        "Fury's Big Week"
+      ],
+      "events": [
+        {
+          "id": "evt-2011-iron-man-2-new-element",
+          "movieId": "iron-man-2-2010",
+          "title": {
+            "ja": "新元素合成 & スターク・エキスポ決戦",
+            "en": "New Element Synthesized & Expo Climax"
+          },
+          "inUniverseYear": 2011,
+          "inUniverseDateLabel": "2011年5月 (ビッグ・ウィーク)",
+          "summary": "ハワードの設計図から新元素バダシウムを合成。ウィップラッシュのドローン軍団を撃退。",
+          "order": 1,
+          "eventType": "canon_milestone",
+          "keyCharacters": [
+            "Tony Stark",
+            "James Rhodes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-incredible-hulk-2008",
+      "title": {
+        "ja": "インクレディブル・ハルク",
+        "en": "The Incredible Hulk"
+      },
+      "releaseYear": 2008,
+      "releaseDate": "2008-06-13",
+      "type": "movie",
+      "phase": 1,
+      "chronologicalOrder": 5,
+      "inUniverseTimeLabel": "2011",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/gKzYx79y0AQTL4UAk1cBQJ3nvrm.jpg",
+      "summary": "ガンマ線実験の事故で緑の巨人ハルクに変身する体となったブルース・バナーが、軍の追撃と暴走するアボミネーションに立ち向かう。",
+      "watchStatus": false,
+      "characters": [
+        "Bruce Banner",
+        "Betty Ross",
+        "Thaddeus Ross",
+        "Emil Blonsky"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 1",
+        "Fury's Big Week",
+        "Hulk"
+      ],
+      "events": [
+        {
+          "id": "evt-2011-hulk-harlem-clash",
+          "movieId": "the-incredible-hulk-2008",
+          "title": {
+            "ja": "ハーレム決戦 & アボミネーション制圧",
+            "en": "Duel in Harlem & Abomination Defeated"
+          },
+          "inUniverseYear": 2011,
+          "inUniverseDateLabel": "2011年5月 (ビッグ・ウィーク)",
+          "summary": "ニューヨークのハーレム街でアボミネーションを撃破。トニー・スタークがロス将軍に接触。",
+          "order": 2,
+          "eventType": "canon_milestone",
+          "keyCharacters": [
+            "Bruce Banner",
+            "Thaddeus Ross"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thor-2011",
+      "title": {
+        "ja": "マイティ・ソー",
+        "en": "Thor"
+      },
+      "releaseYear": 2011,
+      "releaseDate": "2011-05-06",
+      "type": "movie",
+      "phase": 1,
+      "chronologicalOrder": 6,
+      "inUniverseTimeLabel": "2011",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/prSfAi1xGrhLQNxVSUFh61xQ4Qx.jpg",
+      "summary": "傲慢さゆえに力を奪われ地球へ追放された雷神ソーが、自己犠牲の心に目覚めてムジョルニアの力を取り戻す。",
+      "watchStatus": false,
+      "characters": [
+        "Thor Odinson",
+        "Loki Laufeyson",
+        "Jane Foster",
+        "Odin"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 1",
+        "Asgard",
+        "Fury's Big Week"
+      ],
+      "events": [
+        {
+          "id": "evt-2011-thor-awakening",
+          "movieId": "thor-2011",
+          "title": {
+            "ja": "ムジョルニア落下 & ソーの覚醒",
+            "en": "Mjolnir Falls & Thor Awakens"
+          },
+          "inUniverseYear": 2011,
+          "inUniverseDateLabel": "2011年5月 (ビッグ・ウィーク)",
+          "summary": "デストロイヤーから町を守るため命を投げ出し神の力を奪還。ロキがビフレストから宇宙の深淵へ転落。",
+          "order": 3,
+          "eventType": "canon_milestone",
+          "keyCharacters": [
+            "Thor Odinson",
+            "Loki Laufeyson"
+          ]
         }
       ]
     },
@@ -153,86 +448,766 @@
       "inUniverseTimeLabel": "2012",
       "universeId": "earth-616",
       "posterUrl": "https://image.tmdb.org/t/p/w500/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
-      "summary": "ロキ率いる異星人軍団によるNY侵略を阻止するため、最強ヒーローたちがアベンジャーズとして初集結。後のタイムトラベル作戦の重要拠点。",
+      "summary": "サノスからセプターを与えられたロキが地球を侵略。地球最強のヒーローたちが初集結し、ニューヨークでチタウリの大軍を迎撃。",
       "watchStatus": false,
-      "characters": ["Tony Stark", "Steve Rogers", "Thor", "Bruce Banner", "Natasha Romanoff", "Clint Barton", "Loki"],
-      "tags": ["Infinity Saga", "Phase 1", "Battle of NY"],
+      "characters": [
+        "Tony Stark",
+        "Steve Rogers",
+        "Thor Odinson",
+        "Bruce Banner",
+        "Natasha Romanoff",
+        "Clint Barton",
+        "Loki Laufeyson"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 1",
+        "Avengers",
+        "Tesseract",
+        "Mind Stone"
+      ],
       "events": [
         {
           "id": "evt-2012-battle-of-ny",
           "movieId": "the-avengers-2012",
-          "title": { "ja": "ニューヨーク決戦 & ポータル閉鎖", "en": "Battle of NY & Portal Closure" },
+          "title": {
+            "ja": "ニューヨーク決戦 & ポータル閉鎖",
+            "en": "Battle of New York & Portal Closed"
+          },
           "inUniverseYear": 2012,
           "inUniverseDateLabel": "2012年5月4日",
-          "summary": "ロキがキューブで開いたワームホールをナターシャが閉鎖。ソーがロキとキューブをアスガルドへ護送。",
+          "summary": "アベンジャーズが初集結しチタウリ艦隊を撃滅。トニーが核弾頭を宇宙へ運びポータルを閉鎖。ロキを逮捕。",
           "order": 1,
           "eventType": "canon_milestone",
-          "keyArtifacts": ["tesseract-space-stone"],
-          "keyCharacters": ["Tony Stark", "Steve Rogers", "Thor", "Loki"]
+          "keyArtifacts": [
+            "tesseract-space-stone",
+            "mind-stone-scepter"
+          ],
+          "keyCharacters": [
+            "Tony Stark",
+            "Steve Rogers",
+            "Loki Laufeyson"
+          ]
         }
       ]
     },
     {
-      "id": "spider-man-2002",
+      "id": "iron-man-3-2013",
       "title": {
-        "ja": "スパイダーマン",
-        "en": "Spider-Man"
+        "ja": "アイアンマン3",
+        "en": "Iron Man 3"
       },
-      "releaseYear": 2002,
-      "releaseDate": "2002-05-03",
+      "releaseYear": 2013,
+      "releaseDate": "2013-05-03",
       "type": "movie",
-      "phase": "Legacy",
-      "chronologicalOrder": 101,
-      "inUniverseTimeLabel": "2002 (Earth-96283)",
-      "universeId": "earth-96283",
-      "posterUrl": "https://image.tmdb.org/t/p/w500/gh4c2bhLYQEZApEiYMsmFg2llDR.jpg",
-      "summary": "特殊なクモに噛まれたピーター・パーカーが『大いなる力には大いなる責任が伴う』を胸に悪と戦う、サム・ライミ版伝説の幕開け。",
+      "phase": 2,
+      "chronologicalOrder": 8,
+      "inUniverseTimeLabel": "2012",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/qhPtAc1TKbMPqNvcdXSOn9Bn7hZ.jpg",
+      "summary": "NY決戦のトラウマに苦しむトニーが、謎のテロリスト・マンダリンと対峙。スーツ依存から脱却し胸のアークリアクターを摘出。",
       "watchStatus": false,
-      "characters": ["Peter Parker (Earth-96283)", "Norman Osborn", "Mary Jane Watson"],
-      "tags": ["Raimi-verse", "Legacy Spider-Man"],
+      "characters": [
+        "Tony Stark",
+        "Pepper Potts",
+        "Aldrich Killian",
+        "James Rhodes"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 2",
+        "Clean Slate"
+      ],
       "events": [
         {
-          "id": "evt-2002-raimi-origin",
-          "movieId": "spider-man-2002",
-          "title": { "ja": "ピーターの覚醒とグリーン・ゴブリン誕生", "en": "Peter's Awakening & Green Goblin" },
-          "inUniverseYear": 2002,
-          "inUniverseDateLabel": "2002年",
-          "summary": "ベンおじさんの死を経てヒーローへ。ノーマン・オズボーンがゴブリン化。",
-          "order": 1,
-          "eventType": "canon_milestone",
-          "keyCharacters": ["Peter Parker (Earth-96283)", "Norman Osborn"]
-        }
-      ]
-    },
-    {
-      "id": "the-amazing-spider-man-2012",
-      "title": {
-        "ja": "アメイジング・スパイダーマン",
-        "en": "The Amazing Spider-Man"
-      },
-      "releaseYear": 2012,
-      "releaseDate": "2012-07-03",
-      "type": "movie",
-      "phase": "Legacy",
-      "chronologicalOrder": 201,
-      "inUniverseTimeLabel": "2012 (Earth-120703)",
-      "universeId": "earth-120703",
-      "posterUrl": "https://image.tmdb.org/t/p/w500/fSbkkpzgJqO11V9d5Psmg5eRfvL.jpg",
-      "summary": "両親失踪の真相を追うピーター・パーカーが新たな能力に目覚め、オズコープ社のコナーズ博士（リザード）に立ち向かうリブート第1作。",
-      "watchStatus": false,
-      "characters": ["Peter Parker (Earth-120703)", "Gwen Stacy", "Curt Connors"],
-      "tags": ["Webb-verse", "Legacy Spider-Man"],
-      "events": [
-        {
-          "id": "evt-2012-webb-lizard",
-          "movieId": "the-amazing-spider-man-2012",
-          "title": { "ja": "オズコープの遺伝子実験とリザード戦", "en": "Oscorp Genetics & Lizard Battle" },
+          "id": "evt-2012-iron-man-3-clean-slate",
+          "movieId": "iron-man-3-2013",
+          "title": {
+            "ja": "クリーン・スレート発動 & リアクター摘出",
+            "en": "Clean Slate Protocol & Reactor Removal"
+          },
           "inUniverseYear": 2012,
-          "inUniverseDateLabel": "2012年",
-          "summary": "異種間遺伝子交配によりリザードと化したコナーズ博士との死闘。",
+          "inUniverseDateLabel": "2012年12月 (クリスマス)",
+          "summary": "オイルタンカーでの死闘後、全パワードスーツを自爆破棄。胸の破片とアークリアクターを外科手術で摘出。",
+          "order": 3,
+          "eventType": "canon_milestone",
+          "keyCharacters": [
+            "Tony Stark",
+            "Pepper Potts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thor-the-dark-world-2013",
+      "title": {
+        "ja": "マイティ・ソー/ダーク・ワールド",
+        "en": "Thor: The Dark World"
+      },
+      "releaseYear": 2013,
+      "releaseDate": "2013-11-08",
+      "type": "movie",
+      "phase": 2,
+      "chronologicalOrder": 9,
+      "inUniverseTimeLabel": "2013",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/wp6OxE4poJ4G7c0U2ZIXasMBAn7.jpg",
+      "summary": "惑星直列の危機の中、古代の液体兵器エーテル（リアリティ・ストーン）がジェーンの体内に寄生。ソーとロキが共闘。",
+      "watchStatus": false,
+      "characters": [
+        "Thor Odinson",
+        "Loki Laufeyson",
+        "Jane Foster",
+        "Malekith"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 2",
+        "Reality Stone",
+        "Aether"
+      ],
+      "events": [
+        {
+          "id": "evt-2013-thor-aether-awakens",
+          "movieId": "thor-the-dark-world-2013",
+          "title": {
+            "ja": "エーテル覚醒 & コレクターへ譲渡",
+            "en": "Aether Awakens & Entrusted to Collector"
+          },
+          "inUniverseYear": 2013,
+          "inUniverseDateLabel": "2013年11月",
+          "summary": "グリニッジでマレキスを撃破。二つのストーンを同じ場所に置く危険を避けるため、エーテルをノーウェアのコレクターへ寄託。",
           "order": 1,
           "eventType": "canon_milestone",
-          "keyCharacters": ["Peter Parker (Earth-120703)", "Curt Connors"]
+          "keyArtifacts": [
+            "aether-reality-stone"
+          ],
+          "keyCharacters": [
+            "Thor Odinson",
+            "Loki Laufeyson"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "captain-america-the-winter-soldier-2014",
+      "title": {
+        "ja": "キャプテン・アメリカ/ウィンター・ソルジャー",
+        "en": "Captain America: The Winter Soldier"
+      },
+      "releaseYear": 2014,
+      "releaseDate": "2014-04-04",
+      "type": "movie",
+      "phase": 2,
+      "chronologicalOrder": 10,
+      "inUniverseTimeLabel": "2014",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/tVFRpFw3xTed5nGQqW0sdKHp8N0.jpg",
+      "summary": "S.H.I.E.L.D.中枢がヒドラに潜食されていたことが発覚。洗脳された親友バッキー（ウィンター・ソルジャー）とスティーブが激突。",
+      "watchStatus": false,
+      "characters": [
+        "Steve Rogers",
+        "Natasha Romanoff",
+        "Sam Wilson",
+        "Bucky Barnes",
+        "Alexander Pierce"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 2",
+        "Hydra",
+        "Winter Soldier"
+      ],
+      "events": [
+        {
+          "id": "evt-2014-shield-hydra-fall",
+          "movieId": "captain-america-the-winter-soldier-2014",
+          "title": {
+            "ja": "S.H.I.E.L.D.崩壊 & インサイト計画阻止",
+            "en": "Fall of S.H.I.E.L.D. & Insight Averted"
+          },
+          "inUniverseYear": 2014,
+          "inUniverseDateLabel": "2014年春",
+          "summary": "ヘリキャリア3隻を撃沈しヒドラの大量暗殺を阻止。S.H.I.E.L.D.は完全解体され、世界は大きな転換点を迎える。",
+          "order": 1,
+          "eventType": "canon_milestone",
+          "keyCharacters": [
+            "Steve Rogers",
+            "Bucky Barnes",
+            "Sam Wilson"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guardians-of-the-galaxy-2014",
+      "title": {
+        "ja": "ガーディアンズ・オブ・ギャラクシー",
+        "en": "Guardians of the Galaxy"
+      },
+      "releaseYear": 2014,
+      "releaseDate": "2014-08-01",
+      "type": "movie",
+      "phase": 2,
+      "chronologicalOrder": 11,
+      "inUniverseTimeLabel": "2014",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/r7vmZjiyZw9rpJMQJdXvlgiCObd.jpg",
+      "summary": "宇宙のならず者たちが偶然手にしたオーブ（パワー・ストーン）を巡り、狂気の狂信者ロナンから銀河を救うためチームを結成。",
+      "watchStatus": false,
+      "characters": [
+        "Peter Quill",
+        "Gamora",
+        "Drax",
+        "Rocket",
+        "Groot",
+        "Ronan"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 2",
+        "Power Stone",
+        "Cosmic"
+      ],
+      "events": [
+        {
+          "id": "evt-2014-gotg-orb-xandar",
+          "movieId": "guardians-of-the-galaxy-2014",
+          "title": {
+            "ja": "オーブ奪還 & ザンダー星防衛",
+            "en": "Orb Reclaimed & Xandar Saved"
+          },
+          "inUniverseYear": 2014,
+          "inUniverseDateLabel": "2014年8月",
+          "summary": "全員で手を繋ぎパワー・ストーンの暴走エネルギーを制御してロナンを粉砕。ストーンはノバ軍警察の厳重な金庫へ保管。",
+          "order": 2,
+          "eventType": "canon_milestone",
+          "keyArtifacts": [
+            "orb-power-stone"
+          ],
+          "keyCharacters": [
+            "Peter Quill",
+            "Gamora",
+            "Rocket"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guardians-of-the-galaxy-vol-2-2017",
+      "title": {
+        "ja": "ガーディアンズ・オブ・ギャラクシー: リミックス",
+        "en": "Guardians of the Galaxy Vol. 2"
+      },
+      "releaseYear": 2017,
+      "releaseDate": "2017-05-05",
+      "type": "movie",
+      "phase": 3,
+      "chronologicalOrder": 12,
+      "inUniverseTimeLabel": "2014",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/y4MBh0EjBlMuOzv9axM4qJlmzz5.jpg",
+      "summary": "ピーター・クイルの実の父である生ける天人エゴと遭遇。全宇宙同化の野望を阻止するため、育ての親ヨンドゥが命を捧げる。",
+      "watchStatus": false,
+      "characters": [
+        "Peter Quill",
+        "Gamora",
+        "Yondu Udonta",
+        "Ego",
+        "Mantis",
+        "Nebula"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 3",
+        "Cosmic",
+        "Guardians"
+      ],
+      "events": [
+        {
+          "id": "evt-2014-gotg-vol2-ego-defeat",
+          "movieId": "guardians-of-the-galaxy-vol-2-2017",
+          "title": {
+            "ja": "天人エゴ撃破 & ヨンドゥの自己犠牲",
+            "en": "Ego Defeated & Yondu's Sacrifice"
+          },
+          "inUniverseYear": 2014,
+          "inUniverseDateLabel": "2014年10月",
+          "summary": "エゴの中枢核を爆破し宇宙の生命吸収を阻止。宇宙空間でヨンドゥがピーターに宇宙服を譲り絶命。",
+          "order": 3,
+          "eventType": "canon_milestone",
+          "keyCharacters": [
+            "Peter Quill",
+            "Yondu Udonta"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "avengers-age-of-ultron-2015",
+      "title": {
+        "ja": "アベンジャーズ/エイジ・オブ・ウルトロン",
+        "en": "Avengers: Age of Ultron"
+      },
+      "releaseYear": 2015,
+      "releaseDate": "2015-05-01",
+      "type": "movie",
+      "phase": 2,
+      "chronologicalOrder": 13,
+      "inUniverseTimeLabel": "2015",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/4ssDuvEDkS9urOHL21rZuEvioVU.jpg",
+      "summary": "トニーが開発した人工知能ウルトロンが暴走。人工肉体にマインド・ストーンを宿したヴィジョンが誕生し、ソコヴィアで激突。",
+      "watchStatus": false,
+      "characters": [
+        "Tony Stark",
+        "Steve Rogers",
+        "Thor Odinson",
+        "Bruce Banner",
+        "Wanda Maximoff",
+        "Vision",
+        "Ultron"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 2",
+        "Mind Stone",
+        "Sokovia"
+      ],
+      "events": [
+        {
+          "id": "evt-2015-ultron-sokovia-fall",
+          "movieId": "avengers-age-of-ultron-2015",
+          "title": {
+            "ja": "ウルトロン暴走 & ソコヴィア浮上粉砕",
+            "en": "Ultron Climax & Sokovia Shattered"
+          },
+          "inUniverseYear": 2015,
+          "inUniverseDateLabel": "2015年5月",
+          "summary": "隕石落としを目論むソコヴィア都市を空中粉砕。ヴィジョンがマインド・ストーンの力で覚醒しウルトロンを消滅させる。",
+          "order": 1,
+          "eventType": "canon_milestone",
+          "keyArtifacts": [
+            "mind-stone-scepter"
+          ],
+          "keyCharacters": [
+            "Tony Stark",
+            "Steve Rogers",
+            "Vision",
+            "Wanda Maximoff"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ant-man-2015",
+      "title": {
+        "ja": "アントマン",
+        "en": "Ant-Man"
+      },
+      "releaseYear": 2015,
+      "releaseDate": "2015-07-17",
+      "type": "movie",
+      "phase": 2,
+      "chronologicalOrder": 14,
+      "inUniverseTimeLabel": "2015",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/rQRnQ9AhNmNp27NGPIJWvneRJxw.jpg",
+      "summary": "元泥棒スコット・ラングがハンク・ピムのスーツを受け継ぎ、原子より小さくなる量子世界（Quantum Realm）への扉を開く。",
+      "watchStatus": false,
+      "characters": [
+        "Scott Lang",
+        "Hank Pym",
+        "Hope van Dyne",
+        "Darren Cross"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 2",
+        "Quantum Realm",
+        "Pym Particles"
+      ],
+      "events": [
+        {
+          "id": "evt-2015-antman-quantum-return",
+          "movieId": "ant-man-2015",
+          "title": {
+            "ja": "ピム粒子奪還 & 量子世界からの生還",
+            "en": "Pym Particles Secured & Return from Quantum Realm"
+          },
+          "inUniverseYear": 2015,
+          "inUniverseDateLabel": "2015年7月",
+          "summary": "イエロージャケットを量子化で粉砕。亜原子の極小空間「量子世界」から奇跡の帰還を果たし、後の時間泥棒作戦の礎となる。",
+          "order": 2,
+          "eventType": "canon_milestone",
+          "keyCharacters": [
+            "Scott Lang",
+            "Hank Pym"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "captain-america-civil-war-2016",
+      "title": {
+        "ja": "シビル・ウォー/キャプテン・アメリカ",
+        "en": "Captain America: Civil War"
+      },
+      "releaseYear": 2016,
+      "releaseDate": "2016-05-06",
+      "type": "movie",
+      "phase": 3,
+      "chronologicalOrder": 15,
+      "inUniverseTimeLabel": "2016",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/7S9RvfMBi93qnpswoGgBsmtP09h.jpg",
+      "summary": "ソコヴィア協定を巡りアベンジャーズが二派に分裂。ジモの罠によりトニーの両親暗殺の真実が暴かれ、友情は完全に崩壊。",
+      "watchStatus": false,
+      "characters": [
+        "Steve Rogers",
+        "Tony Stark",
+        "Bucky Barnes",
+        "Natasha Romanoff",
+        "T'Challa",
+        "Peter Parker",
+        "Helmut Zemo"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 3",
+        "Sokovia Accords",
+        "Civil War"
+      ],
+      "events": [
+        {
+          "id": "evt-2016-civil-war-schism",
+          "movieId": "captain-america-civil-war-2016",
+          "title": {
+            "ja": "ソコヴィア協定調印 & アベンジャーズ分裂",
+            "en": "Sokovia Accords & Avengers Schism"
+          },
+          "inUniverseYear": 2016,
+          "inUniverseDateLabel": "2016年5月",
+          "summary": "ライプツィヒ空港で内戦。シベリア基地でトニーvsスティーブ&バッキーの悲劇的決戦。チームは散り散りになる。",
+          "order": 1,
+          "eventType": "canon_milestone",
+          "keyCharacters": [
+            "Steve Rogers",
+            "Tony Stark",
+            "Bucky Barnes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "black-panther-2018",
+      "title": {
+        "ja": "ブラックパンサー",
+        "en": "Black Panther"
+      },
+      "releaseYear": 2018,
+      "releaseDate": "2018-02-16",
+      "type": "movie",
+      "phase": 3,
+      "chronologicalOrder": 16,
+      "inUniverseTimeLabel": "2016",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/uxzzxijgPIY7slzFvMotPv8vlum.jpg",
+      "summary": "父の死を受けてワカンダ国王に即位したティ・チャラが、キルモンガーの叛乱を乗り越え、世界へ門戸を開く歴史的決断を下す。",
+      "watchStatus": false,
+      "characters": [
+        "T'Challa",
+        "Erik Killmonger",
+        "Nakia",
+        "Okoye",
+        "Shuri"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 3",
+        "Wakanda",
+        "Vibranium"
+      ],
+      "events": [
+        {
+          "id": "evt-2016-black-panther-opening",
+          "movieId": "black-panther-2018",
+          "title": {
+            "ja": "ワカンダ王位奪還 & 技術開国宣言",
+            "en": "Throne Reclaimed & Wakanda Opens to World"
+          },
+          "inUniverseYear": 2016,
+          "inUniverseDateLabel": "2016年6月",
+          "summary": "ヴィブラニウム大草原の死闘でキルモンガーを制圧。国連本部でワカンダの高度な科学技術を全人類に共有すると宣言。",
+          "order": 2,
+          "eventType": "canon_milestone",
+          "keyCharacters": [
+            "T'Challa",
+            "Erik Killmonger",
+            "Shuri"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spider-man-homecoming-2017",
+      "title": {
+        "ja": "スパイダーマン: ホームカミング",
+        "en": "Spider-Man: Homecoming"
+      },
+      "releaseYear": 2017,
+      "releaseDate": "2017-07-07",
+      "type": "movie",
+      "phase": 3,
+      "chronologicalOrder": 17,
+      "inUniverseTimeLabel": "2016",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg",
+      "summary": "内戦から戻ったピーター・パーカーが、チタウリ兵器を密造するバルチャーに挑み、一人前のヒーローとして成長する。",
+      "watchStatus": false,
+      "characters": [
+        "Peter Parker",
+        "Tony Stark",
+        "Adrian Toomes",
+        "Ned Leeds"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 3",
+        "Spider-Man",
+        "Queens"
+      ],
+      "events": [
+        {
+          "id": "evt-2016-spiderman-homecoming-vulture",
+          "movieId": "spider-man-homecoming-2017",
+          "title": {
+            "ja": "バルチャー阻止 & 親愛なる隣人の自立",
+            "en": "Vulture Thwarted & Friendly Neighborhood Choice"
+          },
+          "inUniverseYear": 2016,
+          "inUniverseDateLabel": "2016年9月",
+          "summary": "コニーアイランドの浜辺でバルチャーを救助逮捕。トニーからのアベンジャーズ昇格オファーを辞退し地上に残る。",
+          "order": 3,
+          "eventType": "canon_milestone",
+          "keyCharacters": [
+            "Peter Parker",
+            "Tony Stark"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "doctor-strange-2016",
+      "title": {
+        "ja": "ドクター・ストレンジ",
+        "en": "Doctor Strange"
+      },
+      "releaseYear": 2016,
+      "releaseDate": "2016-11-04",
+      "type": "movie",
+      "phase": 3,
+      "chronologicalOrder": 18,
+      "inUniverseTimeLabel": "2016–2017",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/uGBVj3bEbCoZbDjjl9wMgrghcyx.jpg",
+      "summary": "事故で両手の機能を失った天才外科医スティーヴン・ストレンジが魔術を修得し、時間の支配者として多元宇宙の脅威に立ち向かう。",
+      "watchStatus": false,
+      "characters": [
+        "Stephen Strange",
+        "Ancient One",
+        "Karl Mordo",
+        "Kaecilius",
+        "Wong"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 3",
+        "Time Stone",
+        "Mystic Arts"
+      ],
+      "events": [
+        {
+          "id": "evt-2017-strange-dormammu-bargain",
+          "movieId": "doctor-strange-2016",
+          "title": {
+            "ja": "アガモットの目覚醒 & ドルマムゥと取引",
+            "en": "Eye of Agamotto Awakens & Dormammu Bargain"
+          },
+          "inUniverseYear": 2017,
+          "inUniverseDateLabel": "2017年1月",
+          "summary": "香港サンクタムでタイム・ストーンの時間ループを発動。「ドルマムゥ、取引をしに来た」と暗黒次元の神を屈服させ地球を守る。",
+          "order": 1,
+          "eventType": "canon_milestone",
+          "keyArtifacts": [
+            "eye-of-agamotto-time-stone"
+          ],
+          "keyCharacters": [
+            "Stephen Strange",
+            "Wong"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thor-ragnarok-2017",
+      "title": {
+        "ja": "マイティ・ソー バトルロイヤル",
+        "en": "Thor: Ragnarok"
+      },
+      "releaseYear": 2017,
+      "releaseDate": "2017-11-03",
+      "type": "movie",
+      "phase": 3,
+      "chronologicalOrder": 19,
+      "inUniverseTimeLabel": "2017",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg",
+      "summary": "死の女神ヘラにムジョルニアを破壊されたソーが、スルトを解き放ち自らの故郷アスガルドを犠牲にして民を救う。",
+      "watchStatus": false,
+      "characters": [
+        "Thor Odinson",
+        "Loki Laufeyson",
+        "Bruce Banner",
+        "Valkyrie",
+        "Hela"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 3",
+        "Ragnarok",
+        "Asgard"
+      ],
+      "events": [
+        {
+          "id": "evt-2017-thor-ragnarok-destruction",
+          "movieId": "thor-ragnarok-2017",
+          "title": {
+            "ja": "ラグナロク発動 & サノス母艦の急襲",
+            "en": "Ragnarok Unleashed & Sanctuary II Intercept"
+          },
+          "inUniverseYear": 2017,
+          "inUniverseDateLabel": "2017年11月",
+          "summary": "火の巨人スルトがヘラごとアスガルドを粉砕。避難船で地球へ向かう途上、サノスの巨大母艦サンクチュアリIIに遭遇。",
+          "order": 2,
+          "eventType": "canon_milestone",
+          "keyArtifacts": [
+            "tesseract-space-stone"
+          ],
+          "keyCharacters": [
+            "Thor Odinson",
+            "Loki Laufeyson",
+            "Bruce Banner"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ant-man-and-the-wasp-2018",
+      "title": {
+        "ja": "アントマン&ワスプ",
+        "en": "Ant-Man and the Wasp"
+      },
+      "releaseYear": 2018,
+      "releaseDate": "2018-07-06",
+      "type": "movie",
+      "phase": 3,
+      "chronologicalOrder": 20,
+      "inUniverseTimeLabel": "2018",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/eivQmS3wqzqnQdUODjxVXJhviPW.jpg",
+      "summary": "量子トンネルを完成させ30年間取り残されていた初代ワスプを救出。しかしその直後、サノスのスナップにより仲間が塵となる。",
+      "watchStatus": false,
+      "characters": [
+        "Scott Lang",
+        "Hope van Dyne",
+        "Hank Pym",
+        "Janet van Dyne"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 3",
+        "Quantum Realm",
+        "Snap Catastrophe"
+      ],
+      "events": [
+        {
+          "id": "evt-2018-antman-wasp-snap-stranded",
+          "movieId": "ant-man-and-the-wasp-2018",
+          "title": {
+            "ja": "量子トンネル採取 & スナップによる孤立",
+            "en": "Quantum Healing Particles & Snap Stranding"
+          },
+          "inUniverseYear": 2018,
+          "inUniverseDateLabel": "2018年5月",
+          "summary": "量子世界へ潜入したスコット。地上のピム一家がサノスのスナップで灰化し、スコットは量子世界に一人取り残される。",
+          "order": 1,
+          "eventType": "canon_milestone",
+          "keyCharacters": [
+            "Scott Lang",
+            "Hope van Dyne",
+            "Hank Pym"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "avengers-infinity-war-2018",
+      "title": {
+        "ja": "アベンジャーズ/インフィニティ・ウォー",
+        "en": "Avengers: Infinity War"
+      },
+      "releaseYear": 2018,
+      "releaseDate": "2018-04-27",
+      "type": "movie",
+      "phase": 3,
+      "chronologicalOrder": 21,
+      "inUniverseTimeLabel": "2018",
+      "universeId": "earth-616",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
+      "summary": "全6個のインフィニティ・ストーンを狙うサノスが宇宙を蹂躙。タイタンとワカンダで全ヒーローが決死の抵抗を試みるも敗北。",
+      "watchStatus": false,
+      "characters": [
+        "Thanos",
+        "Tony Stark",
+        "Steve Rogers",
+        "Thor Odinson",
+        "Stephen Strange",
+        "Peter Parker",
+        "Wanda Maximoff"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 3",
+        "The Decimation",
+        "Infinity Stones"
+      ],
+      "events": [
+        {
+          "id": "evt-2018-infinity-war-thanos-snap",
+          "movieId": "avengers-infinity-war-2018",
+          "title": {
+            "ja": "ワカンダ決戦 & サノスのスナップ（生命半減）",
+            "en": "Battle of Wakanda & The Snap"
+          },
+          "inUniverseYear": 2018,
+          "inUniverseDateLabel": "2018年5月",
+          "summary": "全6個のストーンをガントレットに装着したサノスが指を鳴らし、全宇宙の生命の半分が灰となって消滅。大敗北を喫す。",
+          "order": 2,
+          "eventType": "canon_milestone",
+          "keyArtifacts": [
+            "tesseract-space-stone",
+            "mind-stone-scepter",
+            "aether-reality-stone",
+            "orb-power-stone",
+            "eye-of-agamotto-time-stone"
+          ],
+          "keyCharacters": [
+            "Thanos",
+            "Thor Odinson",
+            "Steve Rogers",
+            "Tony Stark"
+          ]
         }
       ]
     },
@@ -246,62 +1221,131 @@
       "releaseDate": "2019-04-26",
       "type": "movie",
       "phase": 3,
-      "chronologicalOrder": 23,
-      "inUniverseTimeLabel": "2023 (1970/2012/1949)",
+      "chronologicalOrder": 22,
+      "inUniverseTimeLabel": "2018–2023",
       "universeId": "earth-616",
       "posterUrl": "https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
-      "summary": "量子世界を経由したタイム泥棒作戦。1970年、2012年NYへの時間潜入を経て、サノスとの最終決戦へ。",
+      "summary": "失われた命を取り戻すため、生き残ったアベンジャーズが量子世界を利用した時間泥棒作戦を決行。MCUの集大成。",
       "watchStatus": false,
-      "characters": ["Tony Stark", "Steve Rogers", "Thor", "Bruce Banner", "Natasha Romanoff", "Clint Barton", "Thanos"],
-      "tags": ["Infinity Saga Climax", "Phase 3", "Time Travel", "Time Heist"],
+      "characters": [
+        "Tony Stark",
+        "Steve Rogers",
+        "Thor Odinson",
+        "Bruce Banner",
+        "Natasha Romanoff",
+        "Clint Barton",
+        "Scott Lang",
+        "Thanos"
+      ],
+      "tags": [
+        "Infinity Saga",
+        "Phase 3",
+        "Time Travel",
+        "Climax"
+      ],
       "events": [
+        {
+          "id": "evt-2018-endgame-garden-raid",
+          "movieId": "avengers-endgame-2019",
+          "title": {
+            "ja": "サノス急襲 & ストーン原子破壊判明",
+            "en": "Ambush on the Garden & Stones Destroyed"
+          },
+          "inUniverseYear": 2018,
+          "inUniverseDateLabel": "2018年5月 (スナップ直後)",
+          "summary": "惑星ガーデンでサノスを急襲するも、ストーンは原子レベルで破壊されていた。ソーがサノスの首を刎ねる。",
+          "order": 3,
+          "eventType": "canon_milestone",
+          "keyCharacters": [
+            "Thor Odinson",
+            "Steve Rogers",
+            "Carol Danvers"
+          ]
+        },
         {
           "id": "evt-1970-camp-lehigh-heist",
           "movieId": "avengers-endgame-2019",
-          "title": { "ja": "キャンプ・レハイ潜入: キューブ強奪", "en": "Camp Lehigh Infiltration: Tesseract Heist" },
+          "title": {
+            "ja": "過去改変: キャンプ・レハイ潜入",
+            "en": "Time Heist: Camp Lehigh 1970"
+          },
           "inUniverseYear": 1970,
           "inUniverseDateLabel": "1970年4月7日",
           "summary": "2012年の失策後、トニーとスティーブが1970年へ時間跳躍。キューブを確保し父ハワードと対話。",
           "order": 1,
-          "eventType": "time_travel_arrival",
-          "keyArtifacts": ["tesseract-space-stone"],
-          "keyCharacters": ["Tony Stark (2023)", "Steve Rogers (2023)", "Howard Stark"]
+          "eventType": "time_travel_heist",
+          "keyArtifacts": [
+            "tesseract-space-stone"
+          ],
+          "keyCharacters": [
+            "Tony Stark",
+            "Steve Rogers",
+            "Howard Stark"
+          ]
         },
         {
           "id": "evt-2012-endgame-heist-fumble",
           "movieId": "avengers-endgame-2019",
-          "title": { "ja": "タイム泥棒の失策 & ロキ強奪", "en": "Time Heist Fumble & Loki Escapes" },
+          "title": {
+            "ja": "タイム泥棒の失策 & ロキ強奪",
+            "en": "Time Heist Fumble & Loki Escapes"
+          },
           "inUniverseYear": 2012,
           "inUniverseDateLabel": "2012年5月4日 (決戦直後)",
-          "summary": "2012年ハルクの暴走でケースが開き、ロキがキューブを奪って空間転移。新たな分岐が発生！",
+          "summary": "スターク・タワーでキューブ奪取に失敗。ハルクの乱入で足元に転がったキューブをロキが奪い逃亡。",
           "order": 2,
           "eventType": "nexus_branch_point",
           "isBranchPoint": true,
-          "keyArtifacts": ["tesseract-space-stone"],
-          "keyCharacters": ["Tony Stark (2023)", "Loki (2012)", "Hulk (2012)"]
+          "keyArtifacts": [
+            "tesseract-space-stone"
+          ],
+          "keyCharacters": [
+            "Tony Stark",
+            "Scott Lang",
+            "Loki Laufeyson"
+          ]
         },
         {
           "id": "evt-2023-tony-snap",
           "movieId": "avengers-endgame-2019",
-          "title": { "ja": "トニーのスナップ & サノス消滅", "en": "Tony's Snap & Victory" },
+          "title": {
+            "ja": "トニーのスナップ & サノス消滅",
+            "en": "Tony's Snap & Thanos Vanquished"
+          },
           "inUniverseYear": 2023,
           "inUniverseDateLabel": "2023年10月",
-          "summary": "1970年から持ち帰ったキューブを含む6つのストーンを起動。『私はアイアンマンだ』と唱え散る。",
+          "summary": "全アベンジャーズ集結。トニーが「私はアイアンマンだ」とナノガントレットを起動し自らの命と引き換えにサノス軍を消滅。",
           "order": 3,
           "eventType": "canon_milestone",
-          "keyArtifacts": ["tesseract-space-stone"],
-          "keyCharacters": ["Tony Stark", "Thanos (2014)"]
+          "keyArtifacts": [
+            "tesseract-space-stone",
+            "mind-stone-scepter",
+            "aether-reality-stone",
+            "orb-power-stone",
+            "eye-of-agamotto-time-stone"
+          ],
+          "keyCharacters": [
+            "Tony Stark",
+            "Thanos",
+            "Steve Rogers"
+          ]
         },
         {
           "id": "evt-1949-steve-peggy-dance",
           "movieId": "avengers-endgame-2019",
-          "title": { "ja": "スティーブとペギーの約束のダンス", "en": "Steve & Peggy's Promised Dance" },
+          "title": {
+            "ja": "スティーブとペギーの約束のダンス",
+            "en": "Steve & Peggy's Dance"
+          },
           "inUniverseYear": 1949,
           "inUniverseDateLabel": "1949年",
-          "summary": "ストーン返還を終えたスティーブが1949年に戻り、ペギーと生涯を共にする選択をする。",
+          "summary": "全ストーンを返還したスティーブが過去に留まり、ペギーとの約束のダンスを果たし静かな人生を全う。",
           "order": 4,
           "eventType": "character_retirement",
-          "keyCharacters": ["Steve Rogers", "Peggy Carter"]
+          "keyCharacters": [
+            "Steve Rogers",
+            "Peggy Carter"
+          ]
         }
       ]
     },
@@ -315,38 +1359,64 @@
       "releaseDate": "2021-06-09",
       "type": "series",
       "phase": 4,
-      "chronologicalOrder": 24,
-      "inUniverseTimeLabel": "時間の外側 (2012年分岐)",
+      "chronologicalOrder": 23,
+      "inUniverseTimeLabel": "時間の外側 (Null-Time)",
       "universeId": "tva-outside-time",
-      "posterUrl": "https://image.tmdb.org/t/p/w500/voHUmlvjys5gYe37DYLmEvZaWzK.jpg",
-      "summary": "エンドゲームの2012年NYから四次元キューブで逃亡したロキがTVAに拘束され、神聖時間軸の真実と多元宇宙解放の引き金を引く。",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg",
+      "summary": "四次元キューブで逃亡した2012年のロキがTVAに逮捕され、時間軸の支配者『在り続ける者』の死によって無数のマルチバースが解き放たれる。",
       "watchStatus": false,
-      "characters": ["Loki (Variant L1130)", "Mobius M. Mobius", "Sylvie", "He Who Remains"],
-      "tags": ["Multiverse Saga", "Phase 4", "TVA", "Sacred Timeline Fracture"],
+      "characters": [
+        "Loki",
+        "Sylvie",
+        "Mobius",
+        "He Who Remains"
+      ],
+      "tags": [
+        "Multiverse Saga",
+        "Phase 4",
+        "TVA",
+        "Nexus Branch"
+      ],
       "events": [
         {
           "id": "evt-2012-branch-loki-tva-arrest",
           "movieId": "loki-season-1-2021",
-          "title": { "ja": "ゴビ砂漠漂着 & TVAによる剪定", "en": "Gobi Desert Landing & TVA Pruning" },
+          "title": {
+            "ja": "ゴビ砂漠漂着 & TVAによる剪定",
+            "en": "Loki in Gobi Desert & TVA Arrest"
+          },
           "inUniverseYear": 2012,
-          "inUniverseDateLabel": "2012年 (分岐時間軸)",
-          "summary": "砂漠へ逃亡したロキをTVAミニットメンが急襲・連行。リセットチャージで分岐軸を剪定。",
+          "inUniverseDateLabel": "2012年 (分岐軸)",
+          "summary": "キューブでゴビ砂漠へ転移したロキがミニッツメンに拘束。分岐時間軸はリセットチャージで剪定。",
           "order": 1,
           "eventType": "timeline_pruning",
-          "keyArtifacts": ["tesseract-space-stone"],
-          "keyCharacters": ["Loki (Variant L1130)", "Hunter B-15"]
+          "keyArtifacts": [
+            "tesseract-space-stone"
+          ],
+          "keyCharacters": [
+            "Loki",
+            "Mobius"
+          ]
         },
         {
           "id": "evt-null-tva-paperweight",
           "movieId": "loki-season-1-2021",
-          "title": { "ja": "TVAデスクの文鎮と化したストーン", "en": "Infinity Stones as Paperweights" },
+          "title": {
+            "ja": "TVAデスクの文鎮と化したストーン",
+            "en": "Infinity Stones as TVA Paperweights"
+          },
           "inUniverseYear": 9999,
           "inUniverseDateLabel": "時間の外側",
-          "summary": "引き出しに無造作に転がる大量のストーンを目撃し、ロキは全宇宙最大の無力感を味わう。",
+          "summary": "TVAではインフィニティ・ストーンの超魔力も無効化され、引き出しの紙抑えに過ぎない事実を目撃。",
           "order": 2,
           "eventType": "canon_milestone",
-          "keyArtifacts": ["tesseract-space-stone"],
-          "keyCharacters": ["Loki (Variant L1130)", "Casey"]
+          "keyArtifacts": [
+            "tesseract-space-stone"
+          ],
+          "keyCharacters": [
+            "Loki",
+            "Casey"
+          ]
         }
       ]
     },
@@ -360,46 +1430,58 @@
       "releaseDate": "2021-12-17",
       "type": "movie",
       "phase": 4,
-      "chronologicalOrder": 27,
-      "inUniverseTimeLabel": "2024年 秋",
+      "chronologicalOrder": 24,
+      "inUniverseTimeLabel": "2024",
       "universeId": "earth-616",
       "posterUrl": "https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
-      "summary": "正体が露見したピーターの魔術暴走により、歴代ライミ版・ウェブ版のヴィランとスパイダーマンたちが次元を超えて集結する。",
+      "summary": "正体暴露の危機からストレンジの魔術を頼るも暴走。別次元から歴代スパイダーマンと宿敵が集結。",
       "watchStatus": false,
       "characters": [
-        "Peter Parker (Earth-616)",
-        "Peter Parker (Earth-96283)",
-        "Peter Parker (Earth-120703)",
+        "Peter Parker (MCU)",
+        "Peter Parker (Raimi)",
+        "Peter Parker (Webb)",
         "Doctor Strange",
         "Green Goblin"
       ],
-      "tags": ["Multiverse Saga", "Phase 4", "Spider-Verse Collision"],
+      "tags": [
+        "Multiverse Saga",
+        "Phase 4",
+        "Multiverse Crossover"
+      ],
       "events": [
         {
           "id": "evt-2024-nwh-runes-botched",
           "movieId": "spider-man-no-way-home-2021",
-          "title": { "ja": "忘却魔術の暴走 & 次元境界の裂開", "en": "Runes of Kof-Kol Tampered" },
+          "title": {
+            "ja": "忘却魔術の暴走 & 次元境界の裂開",
+            "en": "Runes of Kof-Kol Ruptured"
+          },
           "inUniverseYear": 2024,
           "inUniverseDateLabel": "2024年11月",
-          "summary": "ピーターの度重なる口出しで呪文が暴走。異次元からピーターの正体を知る者が引き寄せられる。",
+          "summary": "ピーターの躊躇により呪文が暴走。ピーターの正体を知る別次元の存在が引き寄せられる。",
           "order": 1,
           "eventType": "multiverse_crossover",
-          "keyCharacters": ["Stephen Strange", "Peter Parker (Earth-616)"]
+          "keyCharacters": [
+            "Peter Parker (MCU)",
+            "Doctor Strange"
+          ]
         },
         {
           "id": "evt-2024-nwh-spider-climax",
           "movieId": "spider-man-no-way-home-2021",
-          "title": { "ja": "自由の女神決戦: 三世代集結と完全忘却", "en": "Statue of Liberty Battle" },
+          "title": {
+            "ja": "自由の女神決戦: 三世代集結と完全忘却",
+            "en": "Statue of Liberty: Three Peters & Total Oblivion"
+          },
           "inUniverseYear": 2024,
           "inUniverseDateLabel": "2024年11月",
-          "summary": "3人のスパイダーマンがヴィランを治療。次元崩壊を防ぐため、ピーターは自らの記憶消去を受け入れる。",
+          "summary": "3人のスパイダーマンがヴィランを治療。次元崩壊を防ぐためピーターは全世界から自身の記憶を消去。",
           "order": 2,
-          "eventType": "canon_milestone",
+          "eventType": "character_retirement",
           "keyCharacters": [
-            "Peter Parker (Earth-616)",
-            "Peter Parker (Earth-96283)",
-            "Peter Parker (Earth-120703)",
-            "Norman Osborn"
+            "Peter Parker (MCU)",
+            "Peter Parker (Raimi)",
+            "Peter Parker (Webb)"
           ]
         }
       ]
@@ -414,162 +1496,386 @@
       "releaseDate": "2022-05-06",
       "type": "movie",
       "phase": 4,
-      "chronologicalOrder": 28,
-      "inUniverseTimeLabel": "2024年 冬–2025年",
+      "chronologicalOrder": 25,
+      "inUniverseTimeLabel": "2025",
       "universeId": "earth-616",
       "posterUrl": "https://image.tmdb.org/t/p/w500/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg",
-      "summary": "多元宇宙を行き来する少女アメリカ・チャベスを守るため、ストレンジは禁断の書ダークホールドに呑まれたワンダと狂乱のマルチバースを駆け巡る。",
+      "summary": "次元跳躍能力を持つ少女アメリカ・チャベスを巡り、スカーレット・ウィッチとなったワンダの猛威に立ち向かう。",
       "watchStatus": false,
-      "characters": ["Stephen Strange", "Wanda Maximoff", "America Chavez", "Wong"],
-      "tags": ["Multiverse Saga", "Phase 4", "Incursion", "Earth-838"],
+      "characters": [
+        "Stephen Strange",
+        "Wanda Maximoff",
+        "America Chavez",
+        "Wong"
+      ],
+      "tags": [
+        "Multiverse Saga",
+        "Phase 4",
+        "Incursions",
+        "Darkhold"
+      ],
       "events": [
         {
           "id": "evt-2024-mom-incursion",
           "movieId": "doctor-strange-in-the-multiverse-of-madness-2022",
-          "title": { "ja": "狂乱の多元宇宙とダークホールドの破壊", "en": "Multiverse Madness & Darkhold Destroyed" },
+          "title": {
+            "ja": "狂乱の多元宇宙とダークホールドの破壊",
+            "en": "Multiverse Madness & Darkhold Destroyed"
+          },
           "inUniverseYear": 2025,
-          "inUniverseDateLabel": "2025年",
+          "inUniverseDateLabel": "2025年秋",
           "summary": "アース838への転移を経て、ワンダはすべての宇宙のダークホールドを抹消し自ら山に埋もれる。",
           "order": 1,
           "eventType": "canon_milestone",
-          "keyCharacters": ["Stephen Strange", "Wanda Maximoff", "America Chavez"]
+          "keyCharacters": [
+            "Stephen Strange",
+            "Wanda Maximoff"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spider-man-2002",
+      "title": {
+        "ja": "スパイダーマン",
+        "en": "Spider-Man"
+      },
+      "releaseYear": 2002,
+      "releaseDate": "2002-05-03",
+      "type": "movie",
+      "phase": "Legacy",
+      "chronologicalOrder": 26,
+      "inUniverseTimeLabel": "2002",
+      "universeId": "earth-96283",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/gh4c2bh03Qo0eZf7f6d3R6Q8Z6v.jpg",
+      "summary": "遺伝子操作されたクモに噛まれたピーター・パーカーが「大いなる力には大いなる責任が伴う」の教訓を胸に親愛なる隣人となる。",
+      "watchStatus": false,
+      "characters": [
+        "Peter Parker",
+        "Norman Osborn",
+        "Mary Jane Watson"
+      ],
+      "tags": [
+        "Raimi Trilogy",
+        "Earth-96283",
+        "Spider-Man"
+      ],
+      "events": [
+        {
+          "id": "evt-2002-raimi-origin",
+          "movieId": "spider-man-2002",
+          "title": {
+            "ja": "ピーターの覚醒とグリーン・ゴブリン誕生",
+            "en": "Peter's Awakening & Green Goblin Born"
+          },
+          "inUniverseYear": 2002,
+          "inUniverseDateLabel": "2002年",
+          "summary": "ベン叔父さんの死を乗り越えスパイダーマンとして覚醒。ノーマン・オズボーンがゴブリン化。",
+          "order": 1,
+          "eventType": "canon_milestone",
+          "keyCharacters": [
+            "Peter Parker",
+            "Norman Osborn"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "the-amazing-spider-man-2012",
+      "title": {
+        "ja": "アメイジング・スパイダーマン",
+        "en": "The Amazing Spider-Man"
+      },
+      "releaseYear": 2012,
+      "releaseDate": "2012-07-03",
+      "type": "movie",
+      "phase": "Legacy",
+      "chronologicalOrder": 27,
+      "inUniverseTimeLabel": "2012",
+      "universeId": "earth-120703",
+      "posterUrl": "https://image.tmdb.org/t/p/w500/fSbkkpvy7X0sP7zGkI4L6Pj4IuT.jpg",
+      "summary": "両親の失踪の謎を追う高校生ピーターが、オズコープのコナーズ博士の遺伝子実験の暴走リザードに立ち向かう。",
+      "watchStatus": false,
+      "characters": [
+        "Peter Parker",
+        "Gwen Stacy",
+        "Curt Connors"
+      ],
+      "tags": [
+        "Webb Duology",
+        "Earth-120703",
+        "Spider-Man"
+      ],
+      "events": [
+        {
+          "id": "evt-2012-webb-lizard",
+          "movieId": "the-amazing-spider-man-2012",
+          "title": {
+            "ja": "オズコープの遺伝子実験とリザード戦",
+            "en": "Oscorp Cross-Species Genetics & Lizard Climax"
+          },
+          "inUniverseYear": 2012,
+          "inUniverseDateLabel": "2012年",
+          "summary": "オズコープ・タワーで解毒剤を散布しマンハッタンを救出。ステイシー警部の遺志を継ぐ。",
+          "order": 1,
+          "eventType": "canon_milestone",
+          "keyCharacters": [
+            "Peter Parker",
+            "Curt Connors"
+          ]
         }
       ]
     }
   ],
   "edges": [
     {
-      "id": "edge-cap1-to-ocean",
-      "source": "captain-america-the-first-avenger-2011",
-      "sourceHandle": "evt-1942-tonsberg-tesseract__source",
-      "target": "captain-america-the-first-avenger-2011",
-      "targetHandle": "evt-1945-valkyrie-crash__target",
-      "relationType": "chronological",
-      "label": "ヒドラ兵器化から海没へ",
+      "id": "edge-tess-1942-1945",
+      "source": "evt-1942-tonsberg-tesseract",
+      "target": "evt-1945-valkyrie-crash",
+      "relationType": "canon_chronological",
+      "label": "ハワード・スタークが海没キューブ回収",
       "associatedArtifactId": "tesseract-space-stone"
     },
     {
-      "id": "edge-1945-to-1970-custody",
-      "source": "captain-america-the-first-avenger-2011",
-      "sourceHandle": "evt-1945-valkyrie-crash__source",
-      "target": "avengers-endgame-2019",
-      "targetHandle": "evt-1970-camp-lehigh-heist__target",
-      "relationType": "chronological",
-      "label": "ハワード回収 ➔ レハイ地下保管",
+      "id": "edge-tess-1945-1995",
+      "source": "evt-1945-valkyrie-crash",
+      "target": "evt-1995-captain-marvel-awakens",
+      "relationType": "canon_chronological",
+      "label": "ペガサス計画でキューブ研究",
       "associatedArtifactId": "tesseract-space-stone"
     },
     {
-      "id": "edge-ironman-to-avengers",
-      "source": "iron-man-2008",
-      "sourceHandle": "evt-2010-i-am-iron-man__source",
-      "target": "the-avengers-2012",
-      "targetHandle": "evt-2012-battle-of-ny__target",
-      "relationType": "direct_sequel",
-      "label": "アベンジャーズ結成"
+      "id": "edge-marvel-to-ironman",
+      "source": "evt-1995-captain-marvel-awakens",
+      "target": "evt-2010-i-am-iron-man",
+      "relationType": "canon_chronological",
+      "label": "フューリーがアベンジャーズ計画発案"
     },
     {
-      "id": "edge-1970-to-2012-avengers",
-      "source": "avengers-endgame-2019",
-      "sourceHandle": "evt-1970-camp-lehigh-heist__source",
-      "target": "the-avengers-2012",
-      "targetHandle": "evt-2012-battle-of-ny__target",
-      "relationType": "chronological",
-      "label": "ペガサス計画 ➔ ロキ奪取",
+      "id": "edge-ironman-to-ironman2",
+      "source": "evt-2010-i-am-iron-man",
+      "target": "evt-2011-iron-man-2-new-element",
+      "relationType": "canon_chronological",
+      "label": "パラジウム中毒とハワードの遺産"
+    },
+    {
+      "id": "edge-ironman2-to-hulk",
+      "source": "evt-2011-iron-man-2-new-element",
+      "target": "evt-2011-hulk-harlem-clash",
+      "relationType": "canon_chronological",
+      "label": "スタークがロス将軍に接触"
+    },
+    {
+      "id": "edge-hulk-to-thor",
+      "source": "evt-2011-hulk-harlem-clash",
+      "target": "evt-2011-thor-awakening",
+      "relationType": "canon_chronological",
+      "label": "フューリーのビッグ・ウィーク"
+    },
+    {
+      "id": "edge-thor-to-avengers",
+      "source": "evt-2011-thor-awakening",
+      "target": "evt-2012-battle-of-ny",
+      "relationType": "canon_chronological",
+      "label": "ロキがチタウリ艦隊を率いて地球急襲",
       "associatedArtifactId": "tesseract-space-stone"
     },
     {
-      "id": "edge-2012-ny-to-heist",
-      "source": "the-avengers-2012",
-      "sourceHandle": "evt-2012-battle-of-ny__source",
-      "target": "avengers-endgame-2019",
-      "targetHandle": "evt-2012-endgame-heist-fumble__target",
-      "relationType": "chronological",
-      "label": "決戦直後: ロビーでの奪還作戦"
+      "id": "edge-avengers-to-ironman3",
+      "source": "evt-2012-battle-of-ny",
+      "target": "evt-2012-iron-man-3-clean-slate",
+      "relationType": "canon_chronological",
+      "label": "ワームホールのトラウマ克服"
     },
     {
-      "id": "edge-endgame-to-1970-jump",
-      "source": "avengers-endgame-2019",
-      "sourceHandle": "evt-2012-endgame-heist-fumble__source",
-      "target": "avengers-endgame-2019",
-      "targetHandle": "evt-1970-camp-lehigh-heist__target",
+      "id": "edge-avengers-to-darkworld",
+      "source": "evt-2012-battle-of-ny",
+      "target": "evt-2013-thor-aether-awakens",
+      "relationType": "canon_chronological",
+      "label": "ロキ投獄とエーテル覚醒",
+      "associatedArtifactId": "aether-reality-stone"
+    },
+    {
+      "id": "edge-avengers-to-wintersoldier",
+      "source": "evt-2012-battle-of-ny",
+      "target": "evt-2014-shield-hydra-fall",
+      "relationType": "canon_chronological",
+      "label": "S.H.I.E.L.D.の極秘防衛計画"
+    },
+    {
+      "id": "edge-darkworld-to-gotg",
+      "source": "evt-2013-thor-aether-awakens",
+      "target": "evt-2014-gotg-orb-xandar",
+      "relationType": "canon_chronological",
+      "label": "コレクター邸でのストーン連鎖",
+      "associatedArtifactId": "orb-power-stone"
+    },
+    {
+      "id": "edge-gotg-to-gotg2",
+      "source": "evt-2014-gotg-orb-xandar",
+      "target": "evt-2014-gotg-vol2-ego-defeat",
+      "relationType": "canon_chronological",
+      "label": "銀河の守護者としての名声とエゴ襲来"
+    },
+    {
+      "id": "edge-wintersoldier-to-ultron",
+      "source": "evt-2014-shield-hydra-fall",
+      "target": "evt-2015-ultron-sokovia-fall",
+      "relationType": "canon_chronological",
+      "label": "セプター奪還 & ウルトロン暴走",
+      "associatedArtifactId": "mind-stone-scepter"
+    },
+    {
+      "id": "edge-ultron-to-antman",
+      "source": "evt-2015-ultron-sokovia-fall",
+      "target": "evt-2015-antman-quantum-return",
+      "relationType": "canon_chronological",
+      "label": "新アベンジャーズ施設とピム粒子"
+    },
+    {
+      "id": "edge-ultron-to-civilwar",
+      "source": "evt-2015-ultron-sokovia-fall",
+      "target": "evt-2016-civil-war-schism",
+      "relationType": "canon_chronological",
+      "label": "ソコヴィア被害への責任追及"
+    },
+    {
+      "id": "edge-civilwar-to-blackpanther",
+      "source": "evt-2016-civil-war-schism",
+      "target": "evt-2016-black-panther-opening",
+      "relationType": "canon_chronological",
+      "label": "ティ・チャカの死と新国王戴冠"
+    },
+    {
+      "id": "edge-civilwar-to-homecoming",
+      "source": "evt-2016-civil-war-schism",
+      "target": "evt-2016-spiderman-homecoming-vulture",
+      "relationType": "canon_chronological",
+      "label": "内戦から戻ったピーターの成長"
+    },
+    {
+      "id": "edge-civilwar-to-strange",
+      "source": "evt-2016-civil-war-schism",
+      "target": "evt-2017-strange-dormammu-bargain",
+      "relationType": "canon_chronological",
+      "label": "タイム・ストーンの守護者覚醒",
+      "associatedArtifactId": "eye-of-agamotto-time-stone"
+    },
+    {
+      "id": "edge-strange-to-ragnarok",
+      "source": "evt-2017-strange-dormammu-bargain",
+      "target": "evt-2017-thor-ragnarok-destruction",
+      "relationType": "canon_chronological",
+      "label": "ストレンジの導きとオーディンの最期"
+    },
+    {
+      "id": "edge-ragnarok-to-infinitywar",
+      "source": "evt-2017-thor-ragnarok-destruction",
+      "target": "evt-2018-infinity-war-thanos-snap",
+      "relationType": "canon_chronological",
+      "label": "避難船強襲と全ストーン強奪"
+    },
+    {
+      "id": "edge-civilwar-to-antmanwasp",
+      "source": "evt-2016-civil-war-schism",
+      "target": "evt-2018-antman-wasp-snap-stranded",
+      "relationType": "canon_chronological",
+      "label": "自宅軟禁と量子トンネル完成"
+    },
+    {
+      "id": "edge-snap-to-antmanwasp",
+      "source": "evt-2018-infinity-war-thanos-snap",
+      "target": "evt-2018-antman-wasp-snap-stranded",
+      "relationType": "canon_chronological",
+      "label": "スナップの余波で地上通信途絶"
+    },
+    {
+      "id": "edge-infinitywar-to-garden",
+      "source": "evt-2018-infinity-war-thanos-snap",
+      "target": "evt-2018-endgame-garden-raid",
+      "relationType": "canon_chronological",
+      "label": "サノス追跡とストーン破壊の絶望"
+    },
+    {
+      "id": "edge-antman-to-endgame-snap",
+      "source": "evt-2018-antman-wasp-snap-stranded",
+      "target": "evt-2023-tony-snap",
+      "relationType": "canon_chronological",
+      "label": "ネズミにより5年後脱出・タイム泥棒発案"
+    },
+    {
+      "id": "edge-time-heist-2012",
+      "source": "evt-2023-tony-snap",
+      "target": "evt-2012-endgame-heist-fumble",
       "relationType": "time_travel",
-      "label": "時間跳躍: 1970年へ再潜入！",
+      "label": "⏳ 量子跳躍: 2012年NYへ",
       "associatedArtifactId": "tesseract-space-stone"
     },
     {
-      "id": "edge-heist-to-loki-branch",
-      "source": "avengers-endgame-2019",
-      "sourceHandle": "evt-2012-endgame-heist-fumble__source",
-      "target": "loki-season-1-2021",
-      "targetHandle": "evt-2012-branch-loki-tva-arrest__target",
+      "id": "edge-time-heist-1970",
+      "source": "evt-2012-endgame-heist-fumble",
+      "target": "evt-1970-camp-lehigh-heist",
+      "relationType": "time_travel",
+      "label": "⏳ 過去改変跳躍: 1970年レハイへ",
+      "associatedArtifactId": "tesseract-space-stone"
+    },
+    {
+      "id": "edge-time-heist-return",
+      "source": "evt-1970-camp-lehigh-heist",
+      "target": "evt-2023-tony-snap",
+      "relationType": "time_travel",
+      "label": "キューブ確保 & 2023年へ帰還",
+      "associatedArtifactId": "tesseract-space-stone"
+    },
+    {
+      "id": "edge-branch-2012-loki-run",
+      "source": "evt-2012-endgame-heist-fumble",
+      "target": "evt-2012-branch-loki-tva-arrest",
       "relationType": "multiverse_branch",
-      "label": "時間軸分岐: ロキ逃亡！",
+      "label": "⚡ Nexus分岐: キューブ強奪逃亡",
       "associatedArtifactId": "tesseract-space-stone"
     },
     {
-      "id": "edge-loki-to-tva-paperweight",
-      "source": "loki-season-1-2021",
-      "sourceHandle": "evt-2012-branch-loki-tva-arrest__source",
-      "target": "loki-season-1-2021",
-      "targetHandle": "evt-null-tva-paperweight__target",
-      "relationType": "chronological",
-      "label": "時間の外側へ連行 & 押収",
-      "associatedArtifactId": "tesseract-space-stone"
+      "id": "edge-loki-tva-to-nulltime",
+      "source": "evt-2012-branch-loki-tva-arrest",
+      "target": "evt-null-tva-paperweight",
+      "relationType": "multiverse_branch",
+      "label": "時間の外側へ連行 & 神聖時間軸剪定"
     },
     {
-      "id": "edge-1970-heist-to-2023-snap",
-      "source": "avengers-endgame-2019",
-      "sourceHandle": "evt-1970-camp-lehigh-heist__source",
-      "target": "avengers-endgame-2019",
-      "targetHandle": "evt-2023-tony-snap__target",
+      "id": "edge-endgame-to-peggy-dance",
+      "source": "evt-2023-tony-snap",
+      "target": "evt-1949-steve-peggy-dance",
       "relationType": "time_travel",
-      "label": "2023年帰還 ➔ トニースナップ",
-      "associatedArtifactId": "tesseract-space-stone"
-    },
-    {
-      "id": "edge-snap-to-1949-steve",
-      "source": "avengers-endgame-2019",
-      "sourceHandle": "evt-2023-tony-snap__source",
-      "target": "avengers-endgame-2019",
-      "targetHandle": "evt-1949-steve-peggy-dance__target",
-      "relationType": "time_travel",
-      "label": "時間跳躍: 1949年へ帰還・引退"
+      "label": "ストーン返還後に過去へ留まる"
     },
     {
       "id": "edge-endgame-to-nwh",
-      "source": "avengers-endgame-2019",
-      "sourceHandle": "evt-2023-tony-snap__source",
-      "target": "spider-man-no-way-home-2021",
-      "targetHandle": "evt-2024-nwh-runes-botched__target",
-      "relationType": "direct_sequel",
-      "label": "トニー亡き世界での苦闘"
+      "source": "evt-2023-tony-snap",
+      "target": "evt-2024-nwh-runes-botched",
+      "relationType": "canon_chronological",
+      "label": "トニー喪失とピーターの孤立"
     },
     {
       "id": "edge-raimi-to-nwh",
-      "source": "spider-man-2002",
-      "sourceHandle": "evt-2002-raimi-origin__source",
-      "target": "spider-man-no-way-home-2021",
-      "targetHandle": "evt-2024-nwh-spider-climax__target",
+      "source": "evt-2002-raimi-origin",
+      "target": "evt-2024-nwh-spider-climax",
       "relationType": "crossover",
-      "label": "次元交差: ライミ版合流"
+      "label": "🌌 マルチバース召喚 (Earth-96283)"
     },
     {
       "id": "edge-webb-to-nwh",
-      "source": "the-amazing-spider-man-2012",
-      "sourceHandle": "evt-2012-webb-lizard__source",
-      "target": "spider-man-no-way-home-2021",
-      "targetHandle": "evt-2024-nwh-spider-climax__target",
+      "source": "evt-2012-webb-lizard",
+      "target": "evt-2024-nwh-spider-climax",
       "relationType": "crossover",
-      "label": "次元交差: ウェブ版合流"
+      "label": "🌌 マルチバース召喚 (Earth-120703)"
     },
     {
       "id": "edge-nwh-to-mom",
-      "source": "spider-man-no-way-home-2021",
-      "sourceHandle": "evt-2024-nwh-spider-climax__source",
-      "target": "doctor-strange-in-the-multiverse-of-madness-2022",
-      "targetHandle": "evt-2024-mom-incursion__target",
-      "relationType": "direct_sequel",
-      "label": "マルチバース魔術の余波"
+      "source": "evt-2024-nwh-spider-climax",
+      "target": "evt-2024-mom-incursion",
+      "relationType": "canon_chronological",
+      "label": "インカージョンの危険と暗黒魔術"
     }
   ]
 }
